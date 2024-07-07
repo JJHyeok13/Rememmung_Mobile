@@ -12,7 +12,7 @@ const SearchBar: React.FC = () => {
 
   return (
     <styles.Container>
-      <styles.SelectBox>
+      {/* <styles.SelectBox>
         <option>전체기간</option>
       </styles.SelectBox>
       <styles.SelectBox>
@@ -20,7 +20,7 @@ const SearchBar: React.FC = () => {
         <option>제목</option>
         <option>내용</option>
         <option>댓글</option>
-      </styles.SelectBox>
+      </styles.SelectBox> */}
       <styles.InputContainer>
         <styles.Input type="text" placeholder="검색어를 입력해주세요" />
         <styles.SearchButton>검색</styles.SearchButton>
