@@ -11,7 +11,7 @@ const MyPageContainer = styled.div`
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const MyPageLayout: React.FC = () => {

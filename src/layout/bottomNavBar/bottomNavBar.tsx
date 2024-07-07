@@ -1,11 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import styles from "./styles";
-
-import BrownHomeIcon from "@assets/navBar/brownHomeIcon.svg";
-import GrayHomeIcon from "@assets/navBar/grayHomeIcon.svg";
-
 import BrownChattingIcon from "@assets/navBar/brownChattingIcon.svg";
 import GrayChattingIcon from "@assets/navBar/grayChattingIcon.svg";
 
@@ -18,11 +13,15 @@ import GrayLetterIcon from "@assets/navBar/grayLetterIcon.svg";
 import BrownMailBoxIcon from "@assets/navBar/brownMailBoxIcon.svg";
 import GrayMailBoxIcon from "@assets/navBar/grayMailBoxIcon.svg";
 
+import BrownDiaryIcon from "@assets/navBar/brownDiaryIcon.svg";
+import GrayDiaryIcon from "@assets/navBar/grayDiaryIcon.svg";
+
+import styles from "./styles";
+
 const BottomNavBar: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/main", icon: BrownHomeIcon, grayIcon: GrayHomeIcon, label: "홈" },
     {
       path: "/chat",
       icon: BrownChattingIcon,
@@ -46,6 +45,12 @@ const BottomNavBar: React.FC = () => {
       icon: BrownMailBoxIcon,
       grayIcon: GrayMailBoxIcon,
       label: "우편함",
+    },
+    {
+      path: "/diary",
+      icon: BrownDiaryIcon,
+      grayIcon: GrayDiaryIcon,
+      label: "멍일기",
     },
   ];
 

@@ -6,7 +6,6 @@ const styles = {
 
     display: flex;
     flex-direction: column;
-    width: 84%;
     margin-left: auto;
   `,
 };

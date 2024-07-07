@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 const styles = {
   TotalInputContainer: styled.div`
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
 
     > * {
       margin-bottom: 48px;

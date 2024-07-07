@@ -6,21 +6,21 @@ const styles = {
     font-family: "Pretendard";
 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    width: 149px;
-    height: 368px;
-    background-color: #f6f6f8;
     border-radius: 12px;
 
-    padding: 48px 32px;
-    box-sizing: border-box;
+    margin-bottom: 16px;
   `,
   List: styled(NavLink)`
+    border: 1px solid #afafaf;
+    margin-right: 8px;
+
+    padding: 4px 8px;
+    border-radius: 12px;
+
     text-decoration: none;
     color: #afafaf;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: 400;
 
     line-height: 180%;
@@ -36,6 +36,7 @@ const styles = {
     &.active {
       color: #946233;
       font-weight: 600;
+      border: 1px solid #946233;
     }
   `,
 };

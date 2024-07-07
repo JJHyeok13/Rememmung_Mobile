@@ -6,22 +6,13 @@ const styles = {
 
     display: flex;
     flex-direction: column;
-    width: 84%;
-    margin: 0 auto;
   `,
   ElementBox: styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 551px;
     border-radius: 12px;
-    box-sizing: border-box;
-    padding: 32px 16px 32px 32px;
-    background-color: #f4f4f4;
-    overflow: hidden;
 
-    margin: 0 auto;
+    background-color: #f4f4f4;
   `,
   LowerContainer: styled.div`
     display: flex;
