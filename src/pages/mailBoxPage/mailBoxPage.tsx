@@ -47,9 +47,7 @@ const MailBoxPage: React.FC = () => {
   const pageSize = 7;
 
   // @ts-ignore
-  const [totalPage, setTotalPage] = useState<number>(
-    Math.ceil(mailData.totalCount / pageSize)
-  );
+  const [totalPage, setTotalPage] = useState<number>(10);
 
   // @ts-ignore
   const [config, setConfig] = useState<ConfigProps>({
