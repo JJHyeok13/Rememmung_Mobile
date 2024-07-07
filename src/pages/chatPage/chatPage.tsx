@@ -8,6 +8,7 @@ import { ChattingDataProps } from "type/chattingPage/chattingPage";
 import { dummyData } from "./dummyData";
 
 const ChatPage: React.FC = () => {
+  // @ts-ignore
   const [chattingData, setChattingData] =
     useState<ChattingDataProps>(dummyData);
 
