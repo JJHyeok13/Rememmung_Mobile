@@ -43,8 +43,8 @@ const WriteMailPage: React.FC = () => {
         />
         <styles.LowerContainer>
           <SelectLetterStyle />
-          <styles.SendButton onClick={handleWrite}>보내기</styles.SendButton>
         </styles.LowerContainer>
+        <styles.SendButton onClick={handleWrite}>보내기</styles.SendButton>
       </styles.ElementBox>
     </styles.Container>
   );

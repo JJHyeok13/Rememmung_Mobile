@@ -8,6 +8,8 @@ const styles = {
     flex-direction: column;
     width: 84%;
     margin: 0 auto;
+
+    padding-bottom: 96px;
   `,
   WhiteBox: styled.div`
     display: flex;

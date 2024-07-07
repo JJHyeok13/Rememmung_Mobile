@@ -35,7 +35,7 @@ const styles = {
     position: relative;
   `,
   Location: styled.div<NavLabelProps>`
-    color: ${({ $active }) => ($active ? "#946233" : "#AAAEBB")};
+    color: ${({ $active }) => ($active ? "#946233" : "#FFFFFF")};
   `,
 };
 
