@@ -18,7 +18,7 @@ import GrayLetterIcon from "@assets/navBar/grayLetterIcon.svg";
 import BrownMailBoxIcon from "@assets/navBar/brownMailBoxIcon.svg";
 import GrayMailBoxIcon from "@assets/navBar/grayMailBoxIcon.svg";
 
-const NavBar: React.FC = () => {
+const BottomNavBar: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
@@ -55,7 +55,6 @@ const NavBar: React.FC = () => {
         const isActive = location.pathname === path;
         return (
           <styles.StyleLink key={path} to={path} $active={isActive}>
-            {isActive && <styles.Dot />}
             <img src={isActive ? icon : grayIcon} />
             <styles.Location $active={isActive}>{label}</styles.Location>
           </styles.StyleLink>
@@ -65,4 +64,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default BottomNavBar;

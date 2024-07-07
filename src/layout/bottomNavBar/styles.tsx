@@ -11,33 +11,28 @@ interface NavLabelProps {
 
 const styles = {
   Container: styled.div`
-    font-family: "Pretendard";
+    background-color: white;
 
-    width: 84%;
-    margin-top: 26px;
+    position: fixed;
+    bottom: 0;
+    font-family: "Pretendard";
+    width: 400px;
+    height: 80px;
+
+    box-sizing: border-box;
+    padding: 16px;
+
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
   `,
   StyleLink: styled(Link)<StyleLinkProps>`
     width: 50px;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
-    margin-right: 24px;
-    margin-bottom: 27px;
     position: relative;
-  `,
-  Dot: styled.div`
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #946233;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
   `,
   Location: styled.div<NavLabelProps>`
     color: ${({ $active }) => ($active ? "#946233" : "#AAAEBB")};

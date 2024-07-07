@@ -9,7 +9,7 @@ import {
 import { RecoilRoot } from "recoil";
 // import "./App.css";
 
-import useBodyOverflowHidden from "@hooks/useBodyOverflowHidden";
+//import useBodyOverflowHidden from "@hooks/useBodyOverflowHidden";
 
 import StartPage from "./pages/startPage/startPage";
 import KakaoLoginPage from "@pages/socialLoginPage/kakaoLoginPage";
@@ -28,8 +28,6 @@ import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
 
 function App() {
-  useBodyOverflowHidden();
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
