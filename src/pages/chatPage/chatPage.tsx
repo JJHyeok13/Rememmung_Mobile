@@ -21,6 +21,7 @@ const ChatPage: React.FC = () => {
   return (
     <styles.Container>
       <styles.WhiteBox>
+        <styles.Gradation />
         {chattingData && chattingData.nodes.length > 0 ? (
           <ChatComponent chattingData={chattingData} />
         ) : null}

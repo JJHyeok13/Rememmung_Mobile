@@ -9,6 +9,7 @@ const styles = {
     margin: 16px 16px 32px 12px;
 
     border-radius: 12px;
+    z-index: 2;
   `,
   ChattingContainer: styled.div<{ $isMe: boolean }>`
     display: flex;

@@ -15,6 +15,8 @@ const styles = {
   `,
 
   WhiteBox: styled.div`
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -25,6 +27,16 @@ const styles = {
 
     background-image: url(${Background});
     background-repeat: no-repeat;
+  `,
+  Gradation: styled.div`
+    width: 100%;
+    height: 400px;
+    position: absolute;
+
+    border-radius: 12px;
+
+    background-color: black;
+    opacity: 0.47;
   `,
 };
 

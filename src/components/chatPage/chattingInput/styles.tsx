@@ -5,7 +5,9 @@ const styles = {
     width: 92%;
     display: flex;
     align-items: center;
-    margin: 0 auto 22px;
+    margin: 0 auto 16px;
+
+    z-index: 2;
   `,
   StyleInput: styled.input`
     font-size: 16px;
