@@ -2,12 +2,19 @@ import React from "react";
 import KakaoLoginImage from "@assets/startPage/kakaoButton.svg";
 
 import styles from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const StartPage: React.FC = () => {
-  const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
-  const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
+  const navigate = useNavigate();
 
-  const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
+  const handleNext = () => {
+    navigate(`/main`);
+  };
+
+  // const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
+  // const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
+
+  // const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
 
   return (
     <styles.Background>
@@ -19,9 +26,9 @@ const StartPage: React.FC = () => {
       <styles.Subtitle>반려동물 추억 기록 서비스입니다.</styles.Subtitle>
 
       <styles.ButtonContainer>
-        <a href={kakaoLoginURL}>
-          <styles.Button src={KakaoLoginImage} />
-        </a>
+        {/* <a href={kakaoLoginURL}> */}
+        <styles.Button src={KakaoLoginImage} onClick={handleNext} />
+        {/* </a> */}
       </styles.ButtonContainer>
     </styles.Background>
   );
