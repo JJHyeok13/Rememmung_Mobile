@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import PetImageExample from "@assets/chatPage/background.svg";
+import Background from "@assets/chatPage/back.png";
 
 const styles = {
   Container: styled.div`
@@ -19,11 +19,11 @@ const styles = {
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    height: 580px;
+    height: 400px;
     border-radius: 12px;
     margin: 0 auto;
 
-    background-image: url(${PetImageExample});
+    background-image: url(${Background});
     background-repeat: no-repeat;
   `,
 };

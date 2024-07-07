@@ -7,13 +7,11 @@ import styles from "./styles";
 interface ChattingInputProps {
   content: string;
   handleContent: (e: ChangeEvent<HTMLInputElement>) => void;
-  sendContent: () => void;
 }
 
 const ChattingInput: React.FC<ChattingInputProps> = ({
   content,
   handleContent,
-  sendContent,
 }) => {
   return (
     <styles.Container>
@@ -23,11 +21,7 @@ const ChattingInput: React.FC<ChattingInputProps> = ({
         value={content}
         onChange={handleContent}
       />
-      <styles.SendButton
-        src={SendButtonImage}
-        alt="전송 버튼"
-        onClick={sendContent}
-      />
+      <styles.SendButton src={SendButtonImage} alt="전송 버튼" />
     </styles.Container>
   );
 };

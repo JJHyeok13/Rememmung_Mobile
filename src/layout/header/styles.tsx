@@ -7,7 +7,7 @@ const styles = {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 32px 0;
+    padding: 16px 0;
   `,
   StyledLink: styled(Link)`
     text-decoration: none;

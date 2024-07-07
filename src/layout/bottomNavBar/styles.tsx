@@ -11,7 +11,7 @@ interface NavLabelProps {
 
 const styles = {
   Container: styled.div`
-    background-color: white;
+    background-color: #cdc6bf;
 
     position: fixed;
     bottom: 0;

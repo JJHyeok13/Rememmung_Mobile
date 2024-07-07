@@ -6,7 +6,7 @@ const styles = {
     max-height: 100%;
     overflow-y: auto;
 
-    margin: 29px 17px 35px 21px;
+    margin: 16px 16px 32px 12px;
 
     border-radius: 12px;
   `,
@@ -29,7 +29,7 @@ const styles = {
   `,
   PetName: styled.div`
     color: #ffffff;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
   `,
   Message: styled.div<{ $isMe: boolean }>`
@@ -50,7 +50,7 @@ const styles = {
     max-width: fit-content;
     margin: ${(props) => (props.$isMe ? "0 0 0 4px" : "0 4px 0 0")};
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
   `,
   Timestamp: styled.div`
@@ -59,7 +59,7 @@ const styles = {
     color: #e0e0e0;
   `,
   VideoFile: styled.video`
-    width: 500px;
+    width: 100px;
     height: auto;
     border-radius: 5px;
   `,
