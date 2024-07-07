@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import "./App.css";
+// import "./App.css";
 
 import useBodyOverflowHidden from "@hooks/useBodyOverflowHidden";
 

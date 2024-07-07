@@ -11,23 +11,18 @@ const StartPage: React.FC = () => {
 
   return (
     <styles.Background>
-      <styles.Gradation>
-        <styles.Container>
-          <styles.Title>당신의 소중한 기억들을</styles.Title>
-          <b>
-            <styles.Title>리멤멍이 함께할게요!</styles.Title>
-          </b>
-          <styles.Subtitle>
-            리멤멍은 생성형 AI를 활용한 반려동물 추억 기록 서비스입니다.
-          </styles.Subtitle>
+      <styles.Title>당신의 소중한 기억들을</styles.Title>
+      <b>
+        <styles.Title>리멤멍이 함께할게요!</styles.Title>
+      </b>
+      <styles.Subtitle>리멤멍은 생성형 AI를 활용한</styles.Subtitle>
+      <styles.Subtitle>반려동물 추억 기록 서비스입니다.</styles.Subtitle>
 
-          <styles.ButtonContainer>
-            <a href={kakaoLoginURL}>
-              <styles.Button src={KakaoLoginImage} />
-            </a>
-          </styles.ButtonContainer>
-        </styles.Container>
-      </styles.Gradation>
+      <styles.ButtonContainer>
+        <a href={kakaoLoginURL}>
+          <styles.Button src={KakaoLoginImage} />
+        </a>
+      </styles.ButtonContainer>
     </styles.Background>
   );
 };
