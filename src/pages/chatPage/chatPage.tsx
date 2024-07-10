@@ -9,7 +9,6 @@ import Profile from "@assets/chatPage/profile.svg";
 import ChatIcon from "@assets/chatPage/chatIcon.svg";
 
 import { ChattingDataProps } from "type/chattingPage/chattingPage";
-import { dummyData } from "./dummyData";
 
 const ChatPage: React.FC = () => {
   // @ts-ignore
@@ -29,7 +28,7 @@ const ChatPage: React.FC = () => {
         <img src={Profile} />
       </div>
 
-      <div className="min-h-[450px] px-5 flex-1 justify-center">
+      <div className="min-h-[450px] px-5 flex justify-center">
         {chattingData && chattingData.nodes.length > 0 ? (
           <ChatComponent chattingData={chattingData} />
         ) : (

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import styles from "./styles";
+import React from "react";
 
 interface PhotoContainerProps {
   photoData: {
@@ -13,36 +11,34 @@ interface PhotoContainerProps {
       createdAt: string;
     };
   }[];
+  onPhotoClick: (photo: {
+    id: number;
+    petId: number;
+    attachment: {
+      id: number;
+      type: string;
+      url: string;
+      createdAt: string;
+    };
+  }) => void;
 }
 
-const PhotoContainer: React.FC<PhotoContainerProps> = ({ photoData }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
+const PhotoContainer: React.FC<PhotoContainerProps> = ({
+  photoData,
+  onPhotoClick,
+}) => {
   return (
-    <styles.Container>
-      {photoData.map((photo, index) => (
-        <styles.PhotoContainer
+    <div className="grid grid-cols-2 gap-4">
+      {photoData.map((photo) => (
+        <div
           key={photo.id}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
+          className="w-40 shadow-imageBack rounded-xl"
+          onClick={() => onPhotoClick(photo)}
         >
-          {hoveredIndex === index && (
-            <styles.HoveredData>
-              <styles.Title>{photo.attachment.createdAt}</styles.Title>
-            </styles.HoveredData>
-          )}
-          <styles.Photo src={photo.attachment.url} />
-        </styles.PhotoContainer>
+          <img src={photo.attachment.url} className="w-40" />
+        </div>
       ))}
-    </styles.Container>
+    </div>
   );
 };
 

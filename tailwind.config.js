@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        imageBack: "0px 2px 6px rgba(82, 82, 82, 0.25)",
+      },
       colors: {
         brown: {
           100: "#EAE0D6",
