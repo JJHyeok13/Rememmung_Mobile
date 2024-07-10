@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 
-import styles from "./styles";
-
 interface DeleteModalProps {
   title: string;
   subtitle: string;

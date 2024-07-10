@@ -10,6 +10,7 @@ interface StepTwoProps {
 const StepTwo: React.FC<StepTwoProps> = ({
   selectedName,
   setName,
+  // @ts-ignore
   handlePrevStep,
   handleNextStep,
 }) => {

@@ -35,7 +35,9 @@ const StepFive: React.FC<StepFiveProps> = ({
   setFavorites,
   setDislike,
   setSkill,
+  // @ts-ignore
   handlePrevStep,
+  // @ts-ignore
   handleSubmit,
 }) => {
   const [birthdayYear, setBirthdayYear] = useState<string>("");
@@ -63,6 +65,7 @@ const StepFive: React.FC<StepFiveProps> = ({
   }, [selectedBirthday, selectedFarewellday]);
 
   // 입력 내용 초기화 함수
+  // @ts-ignore
   const handleReset = () => {
     setBirthdayYear("");
     setBirthdayMonth("");
