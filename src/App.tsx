@@ -26,6 +26,7 @@ import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
 import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
+import MyPage from "@pages/myPage/myPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -44,12 +45,11 @@ function App() {
           <Route path="/mailbox" element={<MailBoxPage />} />
         </Route>
 
-        <Route element={<MyPageLayout />}>
-          <Route path="/mypage/mymail" element={<MyMailPage />} />
-          <Route path="/mypage/update" element={<UpdatePage />} />
-          <Route path="/mypage/deletedata" element={<DeleteDataPage />} />
-          <Route path="/mypage/delete" element={<DeleteMemberPage />} />
-        </Route>
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mymail" element={<MyMailPage />} />
+        <Route path="/update" element={<UpdatePage />} />
+        <Route path="/deletedata" element={<DeleteDataPage />} />
+        <Route path="/delete" element={<DeleteMemberPage />} />
       </Route>
     )
   );

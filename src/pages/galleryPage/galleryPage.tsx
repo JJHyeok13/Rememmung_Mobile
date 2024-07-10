@@ -33,11 +33,6 @@ const GalleryPage: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedPhoto(null);
-  };
-
   // useEffect(() => {
   //   getPetFile(currentPage, pageSize).then((res) => setPhotoData(res));
   // }, [photoData, currentPage]);

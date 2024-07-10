@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const toMyPage = () => {
-    navigate(`/mypage/mymail`);
+    navigate(`/mypage`);
   };
 
   return (
