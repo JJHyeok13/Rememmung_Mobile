@@ -13,7 +13,6 @@ const styles = {
     letter-spacing: -1px;
   `,
   OptionContainer: styled.div`
-    width: 759px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -22,8 +21,10 @@ const styles = {
   Option: styled.input`
     display: none;
     &:checked + label {
-      background-color: #946233;
-      color: #ffffff;
+      background-color: #d4c0ad;
+      color: #946233;
+      border: 1px solid #946233;
+      font-weight: 600;
     }
   `,
   Label: styled.label`
@@ -31,15 +32,18 @@ const styles = {
     justify-content: center;
     align-items: center;
 
-    margin: 8px 12px;
+    margin: 0 8px 8px 0;
 
     cursor: pointer;
-    font-size: 16px;
-    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
     box-sizing: border-box;
-    border-radius: 46px;
-    background-color: #e8e8eb;
-    color: #8a8e99;
+    border-radius: 35px;
+
+    border: 1px solid #e8e8eb;
+    background-color: #ffffff;
+    color: #acadb4;
   `,
   PrevButton: styled.img`
     position: fixed;

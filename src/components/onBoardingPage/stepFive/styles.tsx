@@ -5,7 +5,6 @@ const styles = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
   `,
   Title: styled.div`
     font-size: 24px;
@@ -37,8 +36,6 @@ const styles = {
     margin-right: 8px;
   `,
   TotalInputContainer: styled.div`
-    width: 438px;
-    height: calc(100vh - 450px);
     display: flex;
     flex-direction: column;
     overflow-y: scroll;

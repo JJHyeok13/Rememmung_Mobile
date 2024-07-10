@@ -3,10 +3,6 @@ import styles from "./styles";
 
 import { createYear, createMonth, createDay } from "utils/createTime";
 
-import PrevButtonImage from "@assets/onBoardingPage/prevButton.svg";
-import AbleNextButtonImage from "@assets/onBoardingPage/ableNextButton.svg";
-import ResetButtonImage from "@assets/onBoardingPage/resetButton.svg";
-
 interface StepFiveProps {
   selectedGender: string;
   selectedBirthday: string;
@@ -121,39 +117,38 @@ const StepFive: React.FC<StepFiveProps> = ({
   }, [farewellYear, farewellMonth, farewellDay]);
 
   return (
-    <styles.Container>
-      <styles.Title>반려동물의 추가정보를 입력해주세요!</styles.Title>
-      <styles.SubTitle>
-        선택사항이지만, 대답해주신다면 더 정확한 AI 모델을 얻을 수 있어요
-      </styles.SubTitle>
-      <styles.ResetButton onClick={handleReset}>
-        <styles.ResetIcon src={ResetButtonImage} />
-        <div>초기화</div>
-      </styles.ResetButton>
+    <div className="flex flex-col px-5 mt-14">
+      <div className="font-semibold text-lg text-[#51555C] w-fit">
+        반려동물의 <br /> 추가정보를 입력해주세요!
+      </div>
+      <div className="text-sm text-black-400 mb-[42px]">
+        선택사항이지만, 대답해주신다면 <br /> 더 정확한 ‘OO’을 만날 수 있어요..
+      </div>
 
       <styles.TotalInputContainer>
-        <styles.InputContainer>
-          <styles.InputTitle>성별</styles.InputTitle>
-          <styles.Input>
-            <styles.RadioInput
-              type="radio"
-              name="gender"
-              value="MALE"
-              checked={selectedGender === "MALE"}
-              onChange={handleChangeGender}
-            />
-            <label htmlFor="male">남자</label>
+        <div
+          className={`border-[1px] px-5 py-4 rounded-xl border-[#BFA185]
+        `}
+        >
+          <div className={`text-[#808997] font-semibold text-xs`}>이름</div>
+          <input
+            type="radio"
+            name="gender"
+            value="MALE"
+            checked={selectedGender === "MALE"}
+            onChange={handleChangeGender}
+          />
+          <label htmlFor="male">남자</label>
 
-            <styles.RadioInput
-              type="radio"
-              name="gender"
-              value="FEMALE"
-              checked={selectedGender === "FEMALE"}
-              onChange={handleChangeGender}
-            />
-            <label htmlFor="female">여자</label>
-          </styles.Input>
-        </styles.InputContainer>
+          <input
+            type="radio"
+            name="gender"
+            value="FEMALE"
+            checked={selectedGender === "FEMALE"}
+            onChange={handleChangeGender}
+          />
+          <label htmlFor="female">여자</label>
+        </div>
 
         <styles.InputContainer>
           <styles.InputTitle>생일</styles.InputTitle>
@@ -277,11 +272,7 @@ const StepFive: React.FC<StepFiveProps> = ({
           />
         </styles.InputContainer>
       </styles.TotalInputContainer>
-
-      <styles.PrevButton src={PrevButtonImage} onClick={handlePrevStep} />
-
-      <styles.NextButton src={AbleNextButtonImage} onClick={handleSubmit} />
-    </styles.Container>
+    </div>
   );
 };
 

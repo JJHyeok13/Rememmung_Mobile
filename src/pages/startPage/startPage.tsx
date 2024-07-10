@@ -11,6 +11,10 @@ const StartPage: React.FC = () => {
     navigate(`/main`);
   };
 
+  const handleNNext = () => {
+    navigate(`/onboarding`);
+  };
+
   // const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
   // const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
 
@@ -28,6 +32,7 @@ const StartPage: React.FC = () => {
       <styles.ButtonContainer>
         {/* <a href={kakaoLoginURL}> */}
         <styles.Button src={KakaoLoginImage} onClick={handleNext} />
+        <styles.Button src={KakaoLoginImage} onClick={handleNNext} />
         {/* </a> */}
       </styles.ButtonContainer>
     </styles.Background>

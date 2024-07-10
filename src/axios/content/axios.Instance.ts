@@ -1,5 +1,4 @@
 import axios, { AxiosInstance } from "axios";
-//import Cookies from "js-cookie";
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_CONTENT_SERVER_URL,

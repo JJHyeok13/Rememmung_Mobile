@@ -1,19 +1,8 @@
 import styled from "styled-components";
 
 const styles = {
-  Container: styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  `,
-  Title: styled.h3`
-    font-size: 24px;
-    margin-bottom: 40px;
-    color: #53555c;
-    letter-spacing: -1px;
-  `,
   OptionContainer: styled.div`
-    width: 759px;
+    font-family: "YangJin";
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -24,10 +13,12 @@ const styles = {
     &:checked + label {
       background-color: #946233;
       color: #ffffff;
+      border: 0;
     }
   `,
   Label: styled.label`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -35,24 +26,11 @@ const styles = {
 
     cursor: pointer;
     font-size: 16px;
-    padding: 8px 16px;
+    padding: 16px 32px;
     box-sizing: border-box;
-    border-radius: 46px;
-    background-color: #e8e8eb;
-    color: #8a8e99;
-  `,
-  NextButton: styled.img`
-    position: fixed;
-    bottom: 200px;
-    right: 200px;
-    cursor: pointer;
-  `,
-  TestButton: styled.div`
-    cursor: pointer;
-    padding: 10px 16px;
-
-    background-color: black;
-    color: white;
+    border-radius: 12px;
+    color: #b9bbc2;
+    border: 1px solid #d0d2d6;
   `,
 };
 

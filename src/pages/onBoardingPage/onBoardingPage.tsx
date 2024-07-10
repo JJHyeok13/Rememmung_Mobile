@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import StepComponent from "@components/onBoardingPage/stepComponent/stepComponent";
 
-import styles from "./styles";
 // import LoadingComponent from "@components/onBoardingPage/loadingComponent/loadingComponent";
 import CompleteComponent from "@components/onBoardingPage/completeComponent/completeComponent";
 import { PetInfoProps } from "type/onboardingPage/onboardingPage";
@@ -22,10 +21,6 @@ const OnBoardingPage: React.FC = () => {
     favorites: [],
     dislike: [],
     skill: [],
-  });
-
-  useEffect(() => {
-    console.log(petData);
   });
 
   const setType = (species: string) => {
@@ -72,7 +67,7 @@ const OnBoardingPage: React.FC = () => {
   };
 
   return (
-    <styles.Background>
+    <div className="flex-1">
       {!isComplete && (
         <StepComponent
           petData={petData}
@@ -92,7 +87,7 @@ const OnBoardingPage: React.FC = () => {
       {/* {isLoading && <LoadingComponent />} */}
 
       {isComplete && <CompleteComponent petData={petData} />}
-    </styles.Background>
+    </div>
   );
 };
 

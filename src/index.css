@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   background-color: #191919;
 }
@@ -17,4 +21,9 @@ body {
 @font-face {
   font-family: "SBAggro";
   src: url("/SBAggroLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "YangJin";
+  src: url("/YangJin.otf") format("otf");
 }

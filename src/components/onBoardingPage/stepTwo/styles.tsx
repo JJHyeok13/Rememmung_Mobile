@@ -17,7 +17,7 @@ const styles = {
     letter-spacing: -1px;
   `,
   Input: styled.input<NameInputProps>`
-    width: 427px;
+    width: 335px;
     font-size: 18px;
     padding: 20px 24px;
     box-sizing: border-box;

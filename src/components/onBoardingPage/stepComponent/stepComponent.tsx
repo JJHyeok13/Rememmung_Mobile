@@ -37,7 +37,7 @@ const StepComponent: React.FC<StepComponentProps> = ({
   setSkill,
   submitData,
 }) => {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(1);
 
   const handlePrevStep = () => {
     if (step > 1) {
@@ -57,7 +57,7 @@ const StepComponent: React.FC<StepComponentProps> = ({
 
   return (
     <styles.Container>
-      <styles.StepContainer>
+      {/* <styles.StepContainer>
         {[1, 2, 3, 4, 5].map((num) => (
           <React.Fragment key={num}>
             <styles.RoundNumber
@@ -69,7 +69,7 @@ const StepComponent: React.FC<StepComponentProps> = ({
             {num < 5 && <styles.Line $isCompleted={num < step} />}
           </React.Fragment>
         ))}
-      </styles.StepContainer>
+      </styles.StepContainer> */}
 
       {step === 1 && (
         <StepOne
