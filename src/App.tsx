@@ -1,5 +1,4 @@
 import BasicLayout from "./layout/BasicLayout";
-import MyPageLayout from "@layout/MypageLayout";
 import {
   Route,
   createBrowserRouter,

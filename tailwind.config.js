@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundColor: {
+        modalBack: "rgba(0, 0, 0, 0.8)",
+      },
       boxShadow: {
         imageBack: "0px 2px 6px rgba(82, 82, 82, 0.25)",
       },
@@ -19,6 +22,7 @@ export default {
           900: "#1E140A",
         },
         black: {
+          black: "#000000",
           100: "#E8E8EB",
           200: "#D0D2D6",
           300: "#B9BBC2",
