@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./styles";
-import PetProfileImage from "@assets/chatPage/PetProfileImage.svg";
+import PetProfileImage from "@assets/chatPage/little.svg";
 
 interface ChatComponentProps {
   chattingData: {
@@ -30,7 +30,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
       chatContainerRef.current.scrollTop =
         chatContainerRef.current.scrollHeight;
     }
-  }, [chattingData]);
+  }, []);
 
   const renderMessageContent = (chat: any) => {
     const { type, url } = chat.attachment;
@@ -53,27 +53,47 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
   };
 
   return (
-    <styles.Container ref={chatContainerRef}>
+    <div className="flex flex-col" ref={chatContainerRef}>
       {chattingData.nodes.map((chat) => (
-        <styles.ChattingContainer key={chat.id} $isMe={!!chat.userId}>
+        <div
+          key={chat.id}
+          className={`flex flex-col my-[10px] ${
+            !!chat.userId ? "items-end" : "items-start"
+          }`}
+        >
           {/* 애완동물 프로필사진 및 이름 */}
           {chat.userId === null && (
-            <styles.PetProfile>
-              <styles.PetImage src={PetProfileImage} />
-              <styles.PetName>{chat.userId ? "" : `브리`}</styles.PetName>
-            </styles.PetProfile>
+            <div className="flex items-center mb-[6px]">
+              <img src={PetProfileImage} className="w-6 mr-2 rounded-full" />
+              <div className="text-sm font-medium text-black-600">
+                {chat.userId ? "" : `브리`}
+              </div>
+            </div>
           )}
 
           {/* 채팅 메시지 및 시간 */}
-          <styles.Message $isMe={!!chat.userId}>
-            <styles.MessageBubble $isMe={!!chat.userId}>
+          <div
+            className={`flex items-end ${
+              !!chat.userId ? "flex-row-reverse" : "flex-row px-4"
+            }`}
+          >
+            <div
+              className={`flex px-4 py-3 max-w-fit text-sm font-medium ${
+                !!chat.userId
+                  ? "bg-brown-500 text-white rounded-2xl rounded-tr-none ml-1"
+                  : "bg-[#D3D3D3] text-black-700 rounded-2xl rounded-tl-none mr-1"
+              }`}
+            >
               {renderMessageContent(chat)}
-            </styles.MessageBubble>
-            <styles.Timestamp>{chat.createdAt}</styles.Timestamp>
-          </styles.Message>
-        </styles.ChattingContainer>
+            </div>
+
+            <div className="text-[10px] text-black-300 font-normal">
+              {chat.createdAt}
+            </div>
+          </div>
+        </div>
       ))}
-    </styles.Container>
+    </div>
   );
 };
 
