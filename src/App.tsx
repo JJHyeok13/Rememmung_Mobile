@@ -42,13 +42,13 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/write" element={<WriteMailPage />} />
           <Route path="/mailbox" element={<MailBoxPage />} />
-        </Route>
 
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/mymail" element={<MyMailPage />} />
-        <Route path="/update" element={<UpdatePage />} />
-        <Route path="/deletedata" element={<DeleteDataPage />} />
-        <Route path="/delete" element={<DeleteMemberPage />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/mymail" element={<MyMailPage />} />
+          <Route path="/update" element={<UpdatePage />} />
+          <Route path="/deletedata" element={<DeleteDataPage />} />
+          <Route path="/delete" element={<DeleteMemberPage />} />
+        </Route>
       </Route>
     )
   );

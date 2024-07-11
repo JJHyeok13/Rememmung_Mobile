@@ -8,6 +8,7 @@ export default {
       },
       boxShadow: {
         imageBack: "0px 2px 6px rgba(82, 82, 82, 0.25)",
+        navBarBack: "0px 0px 8px rgba(157, 157, 157, 0.25)",
       },
       colors: {
         brown: {
