@@ -6,6 +6,7 @@ import SelectLetterStyle from "@components/writeMailPage/selectLetterStyle/selec
 import styles from "./styles";
 import { writeLetter } from "@server/content/api/letter";
 import { useNavigate } from "react-router-dom";
+import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 
 interface LetterDataProps {
   title: string;
@@ -35,6 +36,7 @@ const WriteMailPage: React.FC = () => {
 
   return (
     <styles.Container>
+      <MailNavBar />
       <styles.ElementBox>
         <InputContainer
           letterData={letterData}

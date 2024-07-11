@@ -6,6 +6,7 @@ import Pagination from "@components/common/pagination/pagination";
 import SearchBar from "@components/mailBoxPage/searchBar/searchBar";
 
 import styles from "./styles";
+import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 
 // import { getLetterList, updateLetter } from "@server/content/api/letter";
 
@@ -99,6 +100,7 @@ const MailBoxPage: React.FC = () => {
 
   return (
     <styles.Container>
+      <MailNavBar />
       <styles.ElementBox>
         {mailData && mailData.nodes.length > 0 ? (
           <>

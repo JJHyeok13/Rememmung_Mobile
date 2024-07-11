@@ -28,7 +28,7 @@
       "@hooks/*": ["hooks/*"],
       "@layout/*": ["layout/*"],
       "@pages/*": ["pages/*"],
-      //"@recoil/*": ["recoil/*"],
+      "@recoil/*": ["recoil/*"],
       "@server/*": ["server/*"]
       //"@utils/*": ["utils/*"]
     }
