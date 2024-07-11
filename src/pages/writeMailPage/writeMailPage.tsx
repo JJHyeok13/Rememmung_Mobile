@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 
-import InputContainer from "@components/writeMailPage/inputContainer/inputContainer";
 import SelectLetterStyle from "@components/writeMailPage/selectLetterStyle/selectLetterStyle";
 
 import styles from "./styles";
@@ -21,12 +20,12 @@ const WriteMailPage: React.FC = () => {
     content: "",
   });
 
-  const handleTitle = (title: string) => {
-    setLetterData((prev) => ({ ...prev, title }));
+  const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+    setLetterData((prev) => ({ ...prev, title: e.target.value }));
   };
 
-  const handleContent = (content: string) => {
-    setLetterData((prev) => ({ ...prev, content }));
+  const handleContent = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setLetterData((prev) => ({ ...prev, content: e.target.value }));
   };
 
   const handleWrite = () => {
@@ -34,21 +33,35 @@ const WriteMailPage: React.FC = () => {
     navigate("/mailbox");
   };
 
+  useEffect(() => {
+    console.log(letterData);
+  }, [letterData]);
+
   return (
-    <styles.Container>
-      <MailNavBar />
-      <styles.ElementBox>
-        <InputContainer
-          letterData={letterData}
-          handleTitle={handleTitle}
-          handleContent={handleContent}
+    <div className="flex flex-col pt-[46px] px-5 pb-[42px] h-[100vh] justify-between">
+      <div className="flex flex-col">
+        <MailNavBar />
+        <input
+          type="text"
+          placeholder="제목"
+          className="px-4 py-3 mb-3 bg-black-100 text-black-700 rounded-xl"
+          value={letterData.title}
+          onChange={handleTitle}
+        />
+        <textarea
+          placeholder="내용"
+          className="px-4 py-3 resize-none bg-black-100 text-black-700 rounded-xl min-h-[313px] mb-4"
+          value={letterData.content}
+          onChange={handleContent}
         />
         <styles.LowerContainer>
           <SelectLetterStyle />
         </styles.LowerContainer>
+      </div>
+      <div>
         <styles.SendButton onClick={handleWrite}>보내기</styles.SendButton>
-      </styles.ElementBox>
-    </styles.Container>
+      </div>
+    </div>
   );
 };
 

@@ -14,8 +14,6 @@ import StartPage from "./pages/startPage/startPage";
 import KakaoLoginPage from "@pages/socialLoginPage/kakaoLoginPage";
 import OnBoardingPage from "./pages/onBoardingPage/onBoardingPage";
 
-import MainPage from "./pages/mainPage/mainPage";
-
 import ChatPage from "./pages/chatPage/chatPage";
 import GalleryPage from "./pages/galleryPage/galleryPage";
 import WriteMailPage from "./pages/writeMailPage/writeMailPage";
@@ -26,6 +24,7 @@ import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
 import MyPage from "@pages/myPage/myPage";
+import Layout from "@layout/layout";
 
 function App() {
   const router = createBrowserRouter(
@@ -36,12 +35,14 @@ function App() {
         <Route path="/oauth2/kakao" element={<KakaoLoginPage />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
 
-        <Route element={<BasicLayout />}>
-          <Route path="/main" element={<MainPage />} />
+        <Route element={<Layout />}>
           <Route path="/chat" element={<ChatPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/write" element={<WriteMailPage />} />
           <Route path="/mailbox" element={<MailBoxPage />} />
+        </Route>
+
+        <Route element={<BasicLayout />}>
+          <Route path="/gallery" element={<GalleryPage />} />
 
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mymail" element={<MyMailPage />} />

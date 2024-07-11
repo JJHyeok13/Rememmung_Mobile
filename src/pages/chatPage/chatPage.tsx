@@ -9,10 +9,12 @@ import Profile from "@assets/chatPage/profile.svg";
 import ChatIcon from "@assets/chatPage/chatIcon.svg";
 
 import { ChattingDataProps } from "type/chattingPage/chattingPage";
+import { dummyData } from "./dummyData";
 
 const ChatPage: React.FC = () => {
   // @ts-ignore
-  const [chattingData, setChattingData] = useState<ChattingDataProps>();
+  const [chattingData, setChattingData] =
+    useState<ChattingDataProps>(dummyData);
 
   // 채팅 입력용 state 변수
   const [content, setContent] = useState<string>("");
@@ -22,13 +24,17 @@ const ChatPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col pb-[100px]">
+    <div
+      className={` ${
+        chattingData === null && "h-calc-100vh-100px"
+      } "flex flex-col pb-[100px] justify-between"`}
+    >
       <div className="bg-[#C4AE99] w-full h-[238px] rounded-b-[40px] relative flex items-center justify-center">
         <img src={Background} className="absolute" />
         <img src={Profile} />
       </div>
 
-      <div className="min-h-[450px] px-5 flex justify-center">
+      <div className="flex justify-center w-full px-5">
         {chattingData && chattingData.nodes.length > 0 ? (
           <ChatComponent chattingData={chattingData} />
         ) : (

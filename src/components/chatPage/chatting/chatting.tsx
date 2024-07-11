@@ -53,7 +53,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
   };
 
   return (
-    <div className="flex flex-col" ref={chatContainerRef}>
+    <div className="flex flex-col w-full" ref={chatContainerRef}>
       {chattingData.nodes.map((chat) => (
         <div
           key={chat.id}

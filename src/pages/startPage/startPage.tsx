@@ -8,7 +8,7 @@ const StartPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    navigate(`/main`);
+    navigate(`/chat`);
   };
 
   const handleNNext = () => {

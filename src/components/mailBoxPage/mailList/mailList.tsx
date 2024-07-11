@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-import DetailMail from "../detailMail/detailMail";
-
-import styles from "./styles";
-
 interface MailListProps {
   isDeleteMode: boolean;
   mailData: {
@@ -36,41 +32,25 @@ const MailList: React.FC<MailListProps> = ({
   };
 
   return (
-    <>
-      <styles.Table>
-        <thead>
-          <tr>
-            <styles.TableHeader></styles.TableHeader>
-            <styles.TableHeader>제목</styles.TableHeader>
-            <styles.TableHeader>보낸이</styles.TableHeader>
-            <styles.TableHeader>날짜</styles.TableHeader>
-          </tr>
-        </thead>
+    <div>
+      {mailData.map((mail) => (
+        <div
+          key={mail.id}
+          className="flex flex-col py-5 border-b-[#EBEBEB] border-b-[1px] first:pt-0 last:border-b-0 last:pb-0"
+        >
+          <div className="flex flex-row justify-between mb-1">
+            <div className="text-sm font-medium text-black-700">
+              {mail.title}
+            </div>
+            <div className="text-xs font-normal text-black-400">
+              {mail.createdAt}
+            </div>
+          </div>
 
-        <tbody>
-          {mailData.map((mail) => (
-            <tr key={mail.id}>
-              <styles.CheckBox>
-                <styles.StyleInput
-                  type="checkbox"
-                  $isDeleteMode={isDeleteMode}
-                />
-              </styles.CheckBox>
-              <styles.TitleData>
-                <styles.Title onClick={() => handleMailClick(mail)}>
-                  {mail.title}
-                </styles.Title>
-              </styles.TitleData>
-              <styles.OtherData>{mail.from}</styles.OtherData>
-              <styles.OtherData>{mail.createdAt}</styles.OtherData>
-            </tr>
-          ))}
-        </tbody>
-      </styles.Table>
-      {isOpen && selectedMail && (
-        <DetailMail detailData={selectedMail} handleClose={handleClose} />
-      )}
-    </>
+          <div className="text-xs font-normal text-black-400">{mail.from}</div>
+        </div>
+      ))}
+    </div>
   );
 };
 

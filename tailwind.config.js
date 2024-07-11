@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      height: {
+        "calc-100vh-100px": "calc(100vh - 100px)",
+      },
       backgroundColor: {
         modalBack: "rgba(0, 0, 0, 0.8)",
       },
