@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./styles";
 
-import DogImage from "@assets/Dog.svg";
+import DogImage from "@assets/chatPage/profile.svg";
 import GoodIcon from "@assets/onBoardingPage/goodButton.svg";
 import ResetIcon from "@assets/onBoardingPage/resetButton.svg";
 import DisableNextButtonImage from "@assets/onBoardingPage/disableNextButton.svg";
