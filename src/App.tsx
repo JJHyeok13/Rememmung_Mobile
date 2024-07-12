@@ -25,6 +25,7 @@ import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
 import MyPage from "@pages/myPage/myPage";
 import Layout from "@layout/layout";
 import DiaryPage from "@pages/diaryPage/diaryPage";
+import WriteDiaryPage from "@pages/diaryPage/writeDiaryPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -40,6 +41,7 @@ function App() {
           <Route path="/write" element={<WriteMailPage />} />
           <Route path="/mailbox" element={<MailBoxPage />} />
           <Route path="/diary" element={<DiaryPage />} />
+          <Route path="/writediary" element={<WriteDiaryPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
 
           <Route path="/mypage" element={<MyPage />} />

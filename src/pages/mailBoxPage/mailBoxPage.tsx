@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import MailList from "@components/mailBoxPage/mailList/mailList";
 
-import styles from "./styles";
+import MailIcon from "@assets/mailBoxPage/mailIcon.svg";
+
 import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
-import { dummyData } from "./dummyData";
+//import { dummyData } from "./dummyData";
 
 // import { getLetterList, updateLetter } from "@server/content/api/letter";
 
@@ -36,7 +37,7 @@ interface ConfigProps {
 
 const MailBoxPage: React.FC = () => {
   // @ts-ignore
-  const [mailData, setMailData] = useState<MailDataProps>(dummyData);
+  const [mailData, setMailData] = useState<MailDataProps>();
   // @ts-ignore
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize = 7;
@@ -79,7 +80,7 @@ const MailBoxPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col pt-[46px] px-5 pb-[42px] h-[100vh]">
+    <div className="flex flex-col pt-[46px] px-5 pb-[42px] h-screen">
       <MailNavBar />
       <div>
         {mailData && mailData.nodes.length > 0 ? (
@@ -92,7 +93,13 @@ const MailBoxPage: React.FC = () => {
             />
           </>
         ) : (
-          <styles.NoData>데이터가 존재하지 않습니다.</styles.NoData>
+          <div className="flex flex-col items-center justify-center">
+            <img src={MailIcon} className="w-16 mb-3" />
+            <div className="text-sm font-medium text-black-300">
+              아직 사진첩이 비어있어요, <br /> 채팅, 편지쓰기를 통해서 사진을
+              얻어봐요!
+            </div>
+          </div>
         )}
       </div>
     </div>
