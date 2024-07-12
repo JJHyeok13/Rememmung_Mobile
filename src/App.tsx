@@ -30,6 +30,7 @@ import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
 import OnboardingFivePage from "@pages/onBoardingPage/onBoardingFive";
+import OnboardingOnePage from "@pages/onBoardingPage/onBoardingOne";
 
 function App() {
   const router = createBrowserRouter(
@@ -39,6 +40,8 @@ function App() {
 
         <Route path="/oauth2/kakao" element={<KakaoLoginPage />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
+
+        <Route path="/onboard1" element={<OnboardingOnePage />} />
         <Route path="/onboard5" element={<OnboardingFivePage />} />
         <Route path="/loading" element={<LoadingPage />} />
 
