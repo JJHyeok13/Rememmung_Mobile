@@ -57,7 +57,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
       {chattingData.nodes.map((chat) => (
         <div
           key={chat.id}
-          className={`flex flex-col my-[10px] ${
+          className={`flex flex-col my-5 ${
             !!chat.userId ? "items-end" : "items-start"
           }`}
         >

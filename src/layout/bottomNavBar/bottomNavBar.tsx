@@ -19,41 +19,37 @@ import GrayProfileIcon from "@assets/navBar/grayProfileIcon.svg";
 const BottomNavBar: React.FC = () => {
   const location = useLocation();
 
-  const isActive = (path: string) => {
-    if (location.pathname === path) {
-      return true;
-    } else {
-      return false;
-    }
+  const isActive = (paths: string[]) => {
+    return paths.includes(location.pathname);
   };
 
   const navItems = [
     {
-      path: "/chat",
+      paths: ["/chat"],
       icon: BrownChattingIcon,
       grayIcon: GrayChattingIcon,
       label: "채팅",
     },
     {
-      path: "/gallery",
+      paths: ["/gallery"],
       icon: BrownGalleryIcon,
       grayIcon: GrayGalleryIcon,
       label: "사진첩",
     },
     {
-      path: "/write",
+      paths: ["/write", "/mailbox"],
       icon: BrownLetterIcon,
       grayIcon: GrayLetterIcon,
       label: "편지쓰기",
     },
     {
-      path: "/diary",
+      paths: ["/diary"],
       icon: BrownDiaryIcon,
       grayIcon: GrayDiaryIcon,
       label: "멍일기",
     },
     {
-      path: "/mypage",
+      paths: ["/mypage", "/mymail", "/update", "/deletedata", "/delete"],
       icon: BrownProfileIcon,
       grayIcon: GrayProfileIcon,
       label: "마이페이지",
@@ -61,18 +57,18 @@ const BottomNavBar: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white fixed bottom-0 flex flex-row justify-between items-center w-[400px] px-4 pt-2 pb-8 shadow-navBarBack rounded-t-[20px] z-50">
-      {navItems.map(({ path, icon, grayIcon, label }) => (
+    <div className="bg-white fixed bottom-0 flex flex-row justify-between items-center w-[400px] px-4 pt-2 pb-8 shadow-navBarBack rounded-t-[20px] z-40">
+      {navItems.map(({ paths, icon, grayIcon, label }) => (
         <Link
-          key={path}
-          to={path}
+          key={paths[0]}
+          to={paths[0]}
           className="flex flex-col items-center px-[13px]"
         >
-          <img src={isActive(path) ? icon : grayIcon} />
+          <img src={isActive(paths) ? icon : grayIcon} />
           <div
             className={`${
-              isActive(path) ? "text-brown-500" : "text-black-300"
-            }  text-[10px]`}
+              isActive(paths) ? "text-brown-500" : "text-black-300"
+            }  text-[8px] font-['YangJin']`}
           >
             {label}
           </div>

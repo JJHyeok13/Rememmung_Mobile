@@ -57,20 +57,6 @@ const StepComponent: React.FC<StepComponentProps> = ({
 
   return (
     <styles.Container>
-      {/* <styles.StepContainer>
-        {[1, 2, 3, 4, 5].map((num) => (
-          <React.Fragment key={num}>
-            <styles.RoundNumber
-              $isActive={step === num}
-              $isCompleted={num < step}
-            >
-              {num}
-            </styles.RoundNumber>
-            {num < 5 && <styles.Line $isCompleted={num < step} />}
-          </React.Fragment>
-        ))}
-      </styles.StepContainer> */}
-
       {step === 1 && (
         <StepOne
           selectedType={petData.species}

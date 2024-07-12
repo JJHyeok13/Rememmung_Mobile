@@ -1,7 +1,6 @@
 import React from "react";
 import KakaoLoginImage from "@assets/startPage/kakaoButton.svg";
 
-import styles from "./styles";
 import { useNavigate } from "react-router-dom";
 
 const StartPage: React.FC = () => {
@@ -21,21 +20,25 @@ const StartPage: React.FC = () => {
   // const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
 
   return (
-    <styles.Background>
-      <styles.Title>당신의 소중한 기억들을</styles.Title>
-      <b>
-        <styles.Title>리멤멍이 함께할게요!</styles.Title>
-      </b>
-      <styles.Subtitle>리멤멍은 생성형 AI를 활용한</styles.Subtitle>
-      <styles.Subtitle>반려동물 추억 기록 서비스입니다.</styles.Subtitle>
+    <div className="flex flex-col h-screen bg-startPage">
+      <div className="flex flex-col items-center justify-center h-screen bg-dimmed">
+        <div className="flex flex-col text-center pb-[100px]">
+          <div className="text-2xl font-bold text-white">
+            당신의 소중한 기억들을 <br /> 리멤멍이 함께할게요!
+          </div>
+          <div className="text-[#C3C3C3] font-normal text-sm">
+            리멤멍은 생성형 AI를 활용한 <br /> 반려동물 추억 기록 서비스입니다.
+          </div>
+        </div>
 
-      <styles.ButtonContainer>
-        {/* <a href={kakaoLoginURL}> */}
-        <styles.Button src={KakaoLoginImage} onClick={handleNext} />
-        <styles.Button src={KakaoLoginImage} onClick={handleNNext} />
-        {/* </a> */}
-      </styles.ButtonContainer>
-    </styles.Background>
+        <div>
+          {/* <a href={kakaoLoginURL}> */}
+          <img src={KakaoLoginImage} onClick={handleNext} />
+          <img src={KakaoLoginImage} onClick={handleNNext} />
+          {/* </a> */}
+        </div>
+      </div>
+    </div>
   );
 };
 

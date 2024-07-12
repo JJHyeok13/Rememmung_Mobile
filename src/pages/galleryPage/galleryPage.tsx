@@ -33,6 +33,11 @@ const GalleryPage: React.FC = () => {
     setIsModalOpen(true);
   };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPhoto(null);
+  };
+
   // useEffect(() => {
   //   getPetFile(currentPage, pageSize).then((res) => setPhotoData(res));
   // }, [photoData, currentPage]);
@@ -58,8 +63,13 @@ const GalleryPage: React.FC = () => {
       </div>
 
       {isModalOpen && selectedPhoto && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80">
-          <ImageModal data={selectedPhoto.attachment} />
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center h-screen bg-modalBack"
+          onClick={handleCloseModal}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <ImageModal data={selectedPhoto.attachment} />
+          </div>
         </div>
       )}
     </div>

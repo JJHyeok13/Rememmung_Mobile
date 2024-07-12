@@ -40,7 +40,7 @@ const MailList: React.FC<MailListProps> = ({
             <div className="text-sm font-medium text-black-700">
               {mail.title}
             </div>
-            <div className="text-xs font-normal text-black-400">
+            <div className="text-xs font-normal text-black-400 tracking-[-1px]">
               {mail.createdAt}
             </div>
           </div>

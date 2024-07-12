@@ -67,7 +67,7 @@ const OnBoardingPage: React.FC = () => {
   };
 
   return (
-    <div className="flex-1">
+    <div className="">
       {!isComplete && (
         <StepComponent
           petData={petData}

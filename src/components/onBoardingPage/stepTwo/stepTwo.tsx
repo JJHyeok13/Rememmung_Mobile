@@ -22,32 +22,36 @@ const StepTwo: React.FC<StepTwoProps> = ({
   };
 
   return (
-    <div className="flex flex-col px-5 mt-14">
-      <div className="font-semibold text-lg text-[#51555C] w-fit mb-8">
-        반려동물의 <br /> 이름을 입력해주세요!
-      </div>
-
-      <div
-        className={`border-[1px] px-5 py-4 rounded-xl ${
-          isFocused || isInputComplete ? "border-[#BFA185]" : "border-[#E6E6E6]"
-        }`}
-      >
-        <div
-          className={`${
-            isFocused ? "text-brown-500" : "text-[#808997]"
-          } font-semibold text-xs`}
-        >
-          이름
+    <div className="flex flex-col justify-between w-full h-screen px-5 pt-14 pb-[52px]">
+      <div>
+        <div className="font-semibold text-lg text-[#51555C] w-fit pl-2 mb-8">
+          반려동물의 <br /> 이름을 입력해주세요!
         </div>
-        <input
-          type="text"
-          placeholder="이름을 입력해주세요"
-          value={selectedName}
-          onChange={(e) => setName(e.target.value)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="text-sm font-medium text-[#6C6C77] border-0"
-        />
+
+        <div
+          className={`border-[1px] px-5 py-4 rounded-xl ${
+            isFocused || isInputComplete
+              ? "border-[#BFA185]"
+              : "border-[#E6E6E6]"
+          }`}
+        >
+          <div
+            className={`${
+              isFocused ? "text-brown-500" : "text-[#808997]"
+            } font-semibold text-xs`}
+          >
+            이름
+          </div>
+          <input
+            type="text"
+            placeholder="이름을 입력해주세요"
+            value={selectedName}
+            onChange={(e) => setName(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className="text-sm font-medium text-[#6C6C77] border-0 w-full"
+          />
+        </div>
       </div>
 
       <div

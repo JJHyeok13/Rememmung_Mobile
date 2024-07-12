@@ -41,27 +41,29 @@ const StepThree: React.FC<StepThreeProps> = ({
   };
 
   return (
-    <div className="flex flex-col px-5 mt-14">
-      <div className="font-semibold text-lg text-[#51555C] w-fit mb-8">
-        반려동물의 <br /> 성격을 선택해주세요!
-      </div>
+    <div className="flex flex-col justify-between w-full h-screen px-5 pt-14 pb-[52px]">
+      <div>
+        <div className="font-semibold text-lg text-[#51555C] w-fit pl-2 mb-8">
+          반려동물의 <br /> 성격을 선택해주세요!
+        </div>
 
-      <div className="flex flex-wrap">
-        {characters.map((character) => (
-          <React.Fragment key={character.id}>
-            <styles.Option
-              type="checkbox"
-              id={character.id}
-              name="petCharacter"
-              value={character.id}
-              checked={selectedCharacter.includes(character.id)}
-              onChange={() => handleCharacterChange(character.id)}
-            />
-            <styles.Label htmlFor={character.id}>
-              <span>{character.name}</span>
-            </styles.Label>
-          </React.Fragment>
-        ))}
+        <div className="flex flex-wrap">
+          {characters.map((character) => (
+            <React.Fragment key={character.id}>
+              <styles.Option
+                type="checkbox"
+                id={character.id}
+                name="petCharacter"
+                value={character.id}
+                checked={selectedCharacter.includes(character.id)}
+                onChange={() => handleCharacterChange(character.id)}
+              />
+              <styles.Label htmlFor={character.id}>
+                <span>{character.name}</span>
+              </styles.Label>
+            </React.Fragment>
+          ))}
+        </div>
       </div>
 
       <div

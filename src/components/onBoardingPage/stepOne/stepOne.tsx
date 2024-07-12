@@ -40,34 +40,36 @@ const StepOne: React.FC<StepOneProps> = ({
   };
 
   return (
-    <div className="flex flex-col px-5">
-      <div className="font-semibold text-lg text-[#51555C] w-fit mb-8">
-        반려동물의 종을 <br /> 선택해주세요!
-      </div>
+    <div className="flex flex-col justify-between w-full h-screen px-5 pt-14 pb-[52px]">
+      <div>
+        <div className="font-semibold text-lg text-[#51555C] w-fit pl-2 mb-8">
+          반려동물의 종을 <br /> 선택해주세요!
+        </div>
 
-      <div className="flex">
-        {types.map((type) => (
-          <React.Fragment key={type.id}>
-            <styles.Option
-              type="radio"
-              id={type.id}
-              name="petType"
-              value={type.id}
-              checked={selectedType === type.id}
-              onChange={() => setType(type.id)}
-            />
-            <styles.Label htmlFor={type.id}>
-              <img
-                src={
-                  type.id === selectedType
-                    ? type.selectedIcon
-                    : type.notSelectedIcon
-                }
+        <div className="flex flex-row justify-around">
+          {types.map((type) => (
+            <React.Fragment key={type.id}>
+              <styles.Option
+                type="radio"
+                id={type.id}
+                name="petType"
+                value={type.id}
+                checked={selectedType === type.id}
+                onChange={() => setType(type.id)}
               />
-              <span>{type.name}</span>
-            </styles.Label>
-          </React.Fragment>
-        ))}
+              <styles.Label htmlFor={type.id}>
+                <img
+                  src={
+                    type.id === selectedType
+                      ? type.selectedIcon
+                      : type.notSelectedIcon
+                  }
+                />
+                <span>{type.name}</span>
+              </styles.Label>
+            </React.Fragment>
+          ))}
+        </div>
       </div>
 
       <div

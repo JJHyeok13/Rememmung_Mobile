@@ -7,7 +7,7 @@ const MyPage: React.FC = () => {
   return (
     <div className="flex flex-col pb-[100px]">
       <div className="min-h-[450px] px-5 flex flex-col pt-[29px]">
-        <div className="mb-6 text-xl font-semibold text-black-700">
+        <div className="pl-2 mb-6 text-xl font-semibold text-black-700">
           마이페이지
         </div>
 

@@ -1,4 +1,3 @@
-import BasicLayout from "./layout/BasicLayout";
 import {
   Route,
   createBrowserRouter,
@@ -41,9 +40,6 @@ function App() {
           <Route path="/write" element={<WriteMailPage />} />
           <Route path="/mailbox" element={<MailBoxPage />} />
           <Route path="/diary" element={<DiaryPage />} />
-        </Route>
-
-        <Route element={<BasicLayout />}>
           <Route path="/gallery" element={<GalleryPage />} />
 
           <Route path="/mypage" element={<MyPage />} />

@@ -3,6 +3,12 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        startPage: "url('./assets/startPage/background.svg')",
+        modal: "rgba(0, 0, 0, 0.8)",
+        dimmed:
+          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 46.5%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 64.76%)",
+      },
       height: {
         "calc-100vh-100px": "calc(100vh - 100px)",
       },
