@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import StepComponent from "@components/onBoardingPage/stepComponent/stepComponent";
 
 // import LoadingComponent from "@components/onBoardingPage/loadingComponent/loadingComponent";
-import CompleteComponent from "@components/onBoardingPage/completeComponent/completeComponent";
 import { PetInfoProps } from "type/onboardingPage/onboardingPage";
 import { savePetInfo } from "@server/user/api/user";
 

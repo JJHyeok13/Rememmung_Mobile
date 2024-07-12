@@ -1,23 +1,24 @@
 import React from "react";
 
-interface TextareaBoxProps {
+interface TextInputBoxProps {
   title: string;
   placeholder: string;
 }
 
-const TextareaBox: React.FC<TextareaBoxProps> = ({ title, placeholder }) => {
+const TextInputBox: React.FC<TextInputBoxProps> = ({ title, placeholder }) => {
   return (
     <div className="border-[1px] border-[#E6E6E6] bg-white px-5 py-4 rounded-xl mb-6">
       <div className="mb-[6px] text-xs font-semibold text-[#808997]">
         {title}
       </div>
 
-      <textarea
+      <input
+        type="text"
         placeholder={placeholder}
-        className="text-sm font-normal text-[#6C6C77] resize-none w-full"
+        className="text-sm font-normal text-[#6C6C77] w-full"
       />
     </div>
   );
 };
 
-export default TextareaBox;
+export default TextInputBox;

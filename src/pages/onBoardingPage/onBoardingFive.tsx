@@ -1,9 +1,17 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import RadioInputBox from "@components/onBoardingPage/onBoardingFive/radioInputBox";
 import SelectInputBox from "@components/onBoardingPage/onBoardingFive/selectInputBox";
 import TextareaBox from "@components/onBoardingPage/onBoardingFive/textareaBox";
-import React from "react";
 
 const OnboardingFivePage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNext = () => {
+    navigate("/loading");
+  };
+
   const genderItem = [
     { id: 1, name: "남자", value: "MALE" },
     { id: 2, name: "여자", value: "FEMALE" },
@@ -41,6 +49,7 @@ const OnboardingFivePage: React.FC = () => {
         className={`${
           true ? "bg-brown-500" : "bg-black-300"
         } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px]`}
+        onClick={handleNext}
       >
         다음
       </div>

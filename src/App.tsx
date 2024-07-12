@@ -9,7 +9,14 @@ import { RecoilRoot } from "recoil";
 import StartPage from "./pages/startPage/startPage";
 
 import KakaoLoginPage from "@pages/socialLoginPage/kakaoLoginPage";
-import OnBoardingPage from "./pages/onBoardingPage/onBoardingPage";
+// import OnBoardingPage from "./pages/onBoardingPage/onBoardingPage";
+
+import OnboardingOnePage from "@pages/onBoardingPage/onBoardingOne";
+import OnboardingTwoPage from "@pages/onBoardingPage/onBoardingTwo";
+import OnboardingThreePage from "@pages/onBoardingPage/onBoardingThree";
+import OnboardingFourPage from "@pages/onBoardingPage/onBoardingFour";
+import OnboardingFivePage from "@pages/onBoardingPage/onBoardingFive";
+
 import LoadingPage from "@pages/onBoardingPage/loadingPage";
 
 import Layout from "@layout/layout";
@@ -29,8 +36,6 @@ import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
 import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
-import OnboardingFivePage from "@pages/onBoardingPage/onBoardingFive";
-import OnboardingOnePage from "@pages/onBoardingPage/onBoardingOne";
 
 function App() {
   const router = createBrowserRouter(
@@ -39,9 +44,12 @@ function App() {
         <Route path="/" element={<StartPage />} />
 
         <Route path="/oauth2/kakao" element={<KakaoLoginPage />} />
-        <Route path="/onboarding" element={<OnBoardingPage />} />
+        {/* <Route path="/onboarding" element={<OnBoardingPage />} /> */}
 
         <Route path="/onboard1" element={<OnboardingOnePage />} />
+        <Route path="/onboard2" element={<OnboardingTwoPage />} />
+        <Route path="/onboard3" element={<OnboardingThreePage />} />
+        <Route path="/onboard4" element={<OnboardingFourPage />} />
         <Route path="/onboard5" element={<OnboardingFivePage />} />
         <Route path="/loading" element={<LoadingPage />} />
 

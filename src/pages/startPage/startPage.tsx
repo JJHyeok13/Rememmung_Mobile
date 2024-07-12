@@ -11,7 +11,7 @@ const StartPage: React.FC = () => {
   };
 
   const handleNNext = () => {
-    navigate(`/onboarding`);
+    navigate(`/onboard1`);
   };
 
   // const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
