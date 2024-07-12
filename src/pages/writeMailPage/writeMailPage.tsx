@@ -38,7 +38,7 @@ const WriteMailPage: React.FC = () => {
   }, [letterData]);
 
   return (
-    <div className="flex flex-col pt-[46px] px-5 pb-[42px] h-[100vh] justify-between">
+    <div className="flex flex-col pt-[46px] px-5 pb-[100px] h-[100vh] justify-between">
       <div className="flex flex-col">
         <MailNavBar />
         <input
@@ -58,8 +58,11 @@ const WriteMailPage: React.FC = () => {
           <SelectLetterStyle />
         </styles.LowerContainer>
       </div>
-      <div>
-        <styles.SendButton onClick={handleWrite}>보내기</styles.SendButton>
+      <div
+        className="px-8 py-3 text-center text-white bg-brown-500 rounded-xl"
+        onClick={handleWrite}
+      >
+        보내기
       </div>
     </div>
   );
