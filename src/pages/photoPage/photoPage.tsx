@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import PhotoContainer from "@components/galleryPage/photoContainer/photoContainer";
+import PhotoContainer from "@components/photoPage/photoContainer/photoContainer";
 
-import { PhotoDataProps } from "type/galleryPage/galleryPage";
+import { PhotoDataProps } from "type/photoPage/photoPage";
 
-import GalleryIcon from "@assets/galleryPage/galleryIcon.svg";
+import PhotoIcon from "@assets/photoPage/photoIcon.svg";
 
 import { dummyData } from "./dummyData";
-import ImageModal from "@components/galleryPage/imageModal/imageModal";
+import ImageModal from "@components/photoPage/imageModal/imageModal";
 
 interface Attachment {
   id: number;
@@ -22,7 +22,7 @@ interface PhotoNode {
   attachment: Attachment;
 }
 
-const GalleryPage: React.FC = () => {
+const PhotoPage: React.FC = () => {
   // @ts-ignore
   const [photoData, setPhotoData] = useState<PhotoDataProps>(dummyData);
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoNode | null>(null);
@@ -45,7 +45,9 @@ const GalleryPage: React.FC = () => {
   return (
     <div className="flex flex-col pb-[100px] pt-[35px]">
       <div className="min-h-[450px] px-5 flex flex-col justify-center">
-        <div className="mb-6 text-xl font-semibold text-black-700">사진첩</div>
+        <div className="pl-2 mb-6 text-xl font-semibold text-black-700">
+          사진첩
+        </div>
         {photoData && photoData.nodes.length > 0 ? (
           <PhotoContainer
             photoData={photoData.nodes}
@@ -53,7 +55,7 @@ const GalleryPage: React.FC = () => {
           />
         ) : (
           <div className="flex flex-col items-center justify-center">
-            <img src={GalleryIcon} className="w-16 mb-3" />
+            <img src={PhotoIcon} className="w-16 mb-3" />
             <div className="text-sm font-medium text-black-300">
               아직 사진첩이 비어있어요, <br /> 채팅, 편지쓰기를 통해서 사진을
               얻어봐요!
@@ -76,4 +78,4 @@ const GalleryPage: React.FC = () => {
   );
 };
 
-export default GalleryPage;
+export default PhotoPage;

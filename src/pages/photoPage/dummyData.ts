@@ -1,8 +1,7 @@
-import Example1 from "../../assets/galleryPage/Example1.svg";
-import Example2 from "../../assets/galleryPage/Example2.svg";
-import Example3 from "../../assets/galleryPage/Example3.svg";
-import Example4 from "../../assets/galleryPage/Example4.svg";
-import Example5 from "../../assets/galleryPage/Example5.svg";
+import Example1 from "@assets/photoPage/Example1.png";
+import Example2 from "@assets/photoPage/Example2.png";
+import Example3 from "@assets/photoPage/Example3.png";
+import Example4 from "@assets/photoPage/Example4.png";
 
 export const dummyData = {
   totalCount: 10,
@@ -53,7 +52,7 @@ export const dummyData = {
       attachment: {
         id: 1,
         type: "",
-        url: `${Example5}`,
+        url: `${Example1}`,
         createdAt: "2024. 06. 08",
       },
     },
@@ -103,7 +102,7 @@ export const dummyData = {
       attachment: {
         id: 1,
         type: "",
-        url: `${Example5}`,
+        url: `${Example4}`,
         createdAt: "2024. 06. 08",
       },
     },

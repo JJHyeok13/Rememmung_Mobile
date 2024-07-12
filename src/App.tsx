@@ -13,12 +13,12 @@ import OnBoardingPage from "./pages/onBoardingPage/onBoardingPage";
 
 import Layout from "@layout/layout";
 
-import ChatPage from "./pages/chatPage/chatPage";
+import ChatPage from "@pages/chatPage/chatPage";
 
-import GalleryPage from "./pages/galleryPage/galleryPage";
+import PhotoPage from "@pages/photoPage/photoPage";
 
-import WriteMailPage from "./pages/writeMailPage/writeMailPage";
-import MailBoxPage from "./pages/mailBoxPage/mailBoxPage";
+import WriteMailPage from "@pages/writeMailPage/writeMailPage";
+import MailBoxPage from "@pages/mailBoxPage/mailBoxPage";
 
 import DiaryPage from "@pages/diaryPage/diaryPage";
 import WriteDiaryPage from "@pages/diaryPage/writeDiaryPage";
@@ -43,7 +43,7 @@ function App() {
           <Route path="/chat" element={<ChatPage />} />
 
           {/* 사진 관련 페이지 */}
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/photo" element={<PhotoPage />} />
 
           {/* 편지 관련 페이지 */}
           <Route path="/write" element={<WriteMailPage />} />

@@ -32,7 +32,7 @@ const PhotoContainer: React.FC<PhotoContainerProps> = ({
       {photoData.map((photo) => (
         <div
           key={photo.id}
-          className="w-40 shadow-imageBack rounded-xl"
+          className="w-40 rounded-xl"
           onClick={() => onPhotoClick(photo)}
         >
           <img src={photo.attachment.url} className="w-40" />

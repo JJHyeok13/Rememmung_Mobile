@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import BrownChattingIcon from "@assets/navBar/brownChattingIcon.svg";
 import GrayChattingIcon from "@assets/navBar/grayChattingIcon.svg";
 
-import BrownGalleryIcon from "@assets/navBar/brownGalleryIcon.svg";
-import GrayGalleryIcon from "@assets/navBar/grayGalleryIcon.svg";
+import BrownPhotoIcon from "@assets/navBar/brownPhotoIcon.svg";
+import GrayPhotoIcon from "@assets/navBar/grayPhotoIcon.svg";
 
 import BrownLetterIcon from "@assets/navBar/brownLetterIcon.svg";
 import GrayLetterIcon from "@assets/navBar/grayLetterIcon.svg";
@@ -31,9 +31,9 @@ const BottomNavBar: React.FC = () => {
       label: "채팅",
     },
     {
-      paths: ["/gallery"],
-      icon: BrownGalleryIcon,
-      grayIcon: GrayGalleryIcon,
+      paths: ["/photo"],
+      icon: BrownPhotoIcon,
+      grayIcon: GrayPhotoIcon,
       label: "사진첩",
     },
     {

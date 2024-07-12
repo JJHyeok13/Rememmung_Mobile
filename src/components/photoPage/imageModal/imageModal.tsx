@@ -1,6 +1,6 @@
 import React from "react";
 
-import DownloadIcon from "@assets/galleryPage/downloadIcon.svg";
+import DownloadIcon from "@assets/photoPage/downloadIcon.svg";
 
 interface ImageModalProps {
   data: {
