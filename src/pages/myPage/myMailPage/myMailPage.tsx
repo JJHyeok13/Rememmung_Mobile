@@ -69,7 +69,6 @@ const MyMailPage: React.FC = () => {
           <>
             <MailList
               mailData={mailData.nodes}
-              isDeleteMode={isDeleteMode}
               isOpen={isOpen}
               handleOpen={handleOpen}
               handleClose={handleClose}
