@@ -17,8 +17,8 @@ import ChatPage from "@pages/chatPage/chatPage";
 
 import PhotoPage from "@pages/photoPage/photoPage";
 
-import WriteMailPage from "@pages/writeMailPage/writeMailPage";
-import MailBoxPage from "@pages/mailBoxPage/mailBoxPage";
+import WriteMailPage from "@pages/mailPage/writeMailPage";
+import MailBoxPage from "@pages/mailPage/mailBoxPage";
 
 import DiaryPage from "@pages/diaryPage/diaryPage";
 import WriteDiaryPage from "@pages/diaryPage/writeDiaryPage";

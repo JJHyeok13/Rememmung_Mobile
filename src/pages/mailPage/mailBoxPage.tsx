@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import MailList from "@components/mailBoxPage/mailList/mailList";
+import MailList from "@components/mailBoxPage/mailList";
 
 import MailIcon from "@assets/mailBoxPage/mailIcon.svg";
 

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-import MailList from "@components/mailBoxPage/mailList/mailList";
+import MailList from "@components/mailBoxPage/mailList";
 import Pagination from "@components/common/pagination/pagination";
-import SearchBar from "@components/mailBoxPage/searchBar/searchBar";
 
 import styles from "./styles";
 
@@ -84,7 +83,6 @@ const MyMailPage: React.FC = () => {
         )}
       </styles.ElementBox>
       <styles.LowerContainer>
-        <SearchBar />
         <styles.ButtonContainer>
           {!isDeleteMode ? (
             <styles.DeleteButton onClick={OnDeleteMode}>

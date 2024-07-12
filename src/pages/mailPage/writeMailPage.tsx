@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 import SelectLetterStyle from "@components/writeMailPage/selectLetterStyle/selectLetterStyle";
 
 import { writeLetter } from "@server/content/api/letter";
-import { useNavigate } from "react-router-dom";
-import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 
 interface LetterDataProps {
   title: string;

@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import styles from "./styles";
 import PetProfileImage from "@assets/chatPage/little.svg";
 
 interface ChatComponentProps {
@@ -42,10 +41,10 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
         return <img src={url} alt="Chat Image" />;
       case "video":
         return (
-          <styles.VideoFile controls>
+          <video controls className="w-[100px] h-auto rounded-[5px]">
             <source src={url} type="video/mp4" />
             Your browser does not support the video tag.
-          </styles.VideoFile>
+          </video>
         );
       default:
         return null;

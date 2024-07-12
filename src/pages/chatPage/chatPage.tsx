@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 
-import ChatComponent from "@components/chatPage/chatting/chatting";
-import ChattingInput from "@components/chatPage/chattingInput/chattingInput";
+import ChatComponent from "@components/chatPage/chatting";
+import ChattingInput from "@components/chatPage/chattingInput";
 
 import Background from "@assets/chatPage/back.svg";
 import Profile from "@assets/chatPage/profile.svg";
