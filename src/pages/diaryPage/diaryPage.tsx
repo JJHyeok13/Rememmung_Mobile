@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const DiaryPage: React.FC = () => {
+  // @ts-ignore
   const [diaryData, setDiaryData] = useState();
 
   return (
