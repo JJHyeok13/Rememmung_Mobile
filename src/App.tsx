@@ -34,8 +34,8 @@ import WriteDiaryPage from "@pages/diaryPage/writeDiaryPage";
 import MyPage from "@pages/myPage/myPage";
 import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
 import UpdatePage from "@pages/myPage/updatePage/updatePage";
-import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
-import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
+import DeleteDataPage from "@pages/myPage/deleteDataPage";
+import DeleteMemberPage from "@pages/myPage/deleteMemberPage";
 
 function App() {
   const router = createBrowserRouter(

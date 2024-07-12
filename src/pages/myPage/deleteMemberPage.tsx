@@ -23,7 +23,7 @@ const DeleteMemberPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex-1 flex flex-col pt-[46px] px-5 pb-[42px] h-[100vh] justify-between">
+      <div className="flex flex-col pt-[46px] px-5 pb-[100px] h-[100vh] justify-between">
         <div>
           <div className="text-[#E72F2F] font-semibold text-base mb-2">
             탈퇴 전 꼭 확인해주세요!
