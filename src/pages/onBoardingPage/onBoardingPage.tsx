@@ -86,7 +86,7 @@ const OnBoardingPage: React.FC = () => {
 
       {/* {isLoading && <LoadingComponent />} */}
 
-      {isComplete && <CompleteComponent petData={petData} />}
+      {/* {isComplete && <CompleteComponent petData={petData} />} */}
     </div>
   );
 };

@@ -10,6 +10,7 @@ import StartPage from "./pages/startPage/startPage";
 
 import KakaoLoginPage from "@pages/socialLoginPage/kakaoLoginPage";
 import OnBoardingPage from "./pages/onBoardingPage/onBoardingPage";
+import LoadingPage from "@pages/onBoardingPage/loadingPage";
 
 import Layout from "@layout/layout";
 
@@ -28,6 +29,7 @@ import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
 import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
+import OnboardingFivePage from "@pages/onBoardingPage/onBoardingFive";
 
 function App() {
   const router = createBrowserRouter(
@@ -37,6 +39,8 @@ function App() {
 
         <Route path="/oauth2/kakao" element={<KakaoLoginPage />} />
         <Route path="/onboarding" element={<OnBoardingPage />} />
+        <Route path="/onboard5" element={<OnboardingFivePage />} />
+        <Route path="/loading" element={<LoadingPage />} />
 
         <Route element={<Layout />}>
           {/* 채팅 페이지 */}
