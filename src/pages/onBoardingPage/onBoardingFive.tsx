@@ -10,7 +10,7 @@ const OnboardingFivePage: React.FC = () => {
   ];
 
   return (
-    <div className="px-5 pt-14">
+    <div className="px-5 pt-14 pb-[42px]">
       <div className="pl-2 mb-[6px] text-lg font-semibold text-[#51555C]">
         반려동물의 <br /> 추가정보를 입력해주세요!
       </div>
@@ -36,6 +36,14 @@ const OnboardingFivePage: React.FC = () => {
       <TextareaBox title="싫어하는 것" placeholder="ex. 차 소리" />
 
       <TextareaBox title="개인기" placeholder="ex. 코" />
+
+      <div
+        className={`${
+          true ? "bg-brown-500" : "bg-black-300"
+        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px]`}
+      >
+        다음
+      </div>
     </div>
   );
 };

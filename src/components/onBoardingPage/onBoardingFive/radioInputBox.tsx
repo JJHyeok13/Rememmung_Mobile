@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+
+interface ItemProps {
+  id: number;
+  value: string;
+  name: string;
+}
 
 interface RadioInputBoxProps {
   title: string;
-  items: {
-    id: number;
-    value: string;
-    name: string;
-  }[];
+  items: ItemProps[];
 }
 
 const RadioInputBox: React.FC<RadioInputBoxProps> = ({ title, items }) => {
+  const [selectedItem, setSelectedItem] = useState<string | null>("");
+
+  const handleInputChange = (items: ItemProps) => {
+    setSelectedItem(items.value);
+  };
+
   return (
     <div className="border-[1px] border-[#E6E6E6] bg-white px-5 py-4 rounded-xl mb-6">
       <div className="mb-[6px] text-xs font-semibold text-[#808997]">
@@ -21,11 +29,14 @@ const RadioInputBox: React.FC<RadioInputBoxProps> = ({ title, items }) => {
           <div key={item.id} className="flex flex-row items-center mr-2">
             <input
               type="radio"
-              name={item.name}
+              id={`radio_${item.id}`}
+              name="radio_group"
               className="mr-1 accent-[#6C6C77]"
+              checked={selectedItem === item.value}
+              onChange={() => handleInputChange(item)}
             />
             <label
-              htmlFor={item.name}
+              htmlFor={`radio_${item.id}`}
               className="text-sm font-normal text-[#ACADB4]"
             >
               {item.name}
