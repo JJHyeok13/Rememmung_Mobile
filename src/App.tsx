@@ -25,6 +25,7 @@ import DeleteDataPage from "@pages/myPage/deleteDataPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage/deleteMemberPage";
 import MyPage from "@pages/myPage/myPage";
 import Layout from "@layout/layout";
+import DiaryPage from "@pages/diaryPage/diaryPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -39,6 +40,7 @@ function App() {
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/write" element={<WriteMailPage />} />
           <Route path="/mailbox" element={<MailBoxPage />} />
+          <Route path="/diary" element={<DiaryPage />} />
         </Route>
 
         <Route element={<BasicLayout />}>
