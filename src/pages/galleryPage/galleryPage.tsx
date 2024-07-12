@@ -43,7 +43,7 @@ const GalleryPage: React.FC = () => {
   // }, [photoData, currentPage]);
 
   return (
-    <div className="flex flex-col pb-[100px]">
+    <div className="flex flex-col pb-[100px] pt-[35px]">
       <div className="min-h-[450px] px-5 flex flex-col justify-center">
         <div className="mb-6 text-xl font-semibold text-black-700">사진첩</div>
         {photoData && photoData.nodes.length > 0 ? (
