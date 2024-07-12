@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface MailListProps {
-  isDeleteMode: boolean;
   mailData: {
     id: number;
     sourceId: number;
@@ -18,18 +17,17 @@ interface MailListProps {
 }
 
 const MailList: React.FC<MailListProps> = ({
-  isDeleteMode,
   mailData,
-  isOpen,
-  handleOpen,
-  handleClose,
+  // isOpen,
+  // handleOpen,
+  // handleClose,
 }) => {
-  const [selectedMail, setSelectedMail] = useState(null);
+  // const [selectedMail, setSelectedMail] = useState(null);
 
-  const handleMailClick = (mail: any) => {
-    setSelectedMail(mail);
-    handleOpen(mail.id);
-  };
+  // const handleMailClick = (mail: any) => {
+  //   setSelectedMail(mail);
+  //   handleOpen(mail.id);
+  // };
 
   return (
     <div>

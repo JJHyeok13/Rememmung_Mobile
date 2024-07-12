@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import MailList from "@components/mailBoxPage/mailList/mailList";
 
@@ -36,10 +35,9 @@ interface ConfigProps {
 }
 
 const MailBoxPage: React.FC = () => {
-  const navigate = useNavigate();
-
   // @ts-ignore
   const [mailData, setMailData] = useState<MailDataProps>(dummyData);
+  // @ts-ignore
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize = 7;
 
@@ -67,8 +65,6 @@ const MailBoxPage: React.FC = () => {
   //   setCurrentPage(num);
   // };
 
-  const [isDeleteMode, setIsDeleteMode] = useState<boolean>(false);
-
   // 편지 상세 뷰 관리 변수
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -90,7 +86,6 @@ const MailBoxPage: React.FC = () => {
           <>
             <MailList
               mailData={mailData.nodes}
-              isDeleteMode={isDeleteMode}
               isOpen={isOpen}
               handleOpen={handleOpen}
               handleClose={handleClose}
