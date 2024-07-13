@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 import MailList from "@components/mailBoxPage/mailList";
+
+import { getLetterList, updateLetter } from "@server/content/api/letter";
 
 import MailIcon from "@assets/mailBoxPage/mailIcon.svg";
 
-import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
 //import { dummyData } from "./dummyData";
-
-// import { getLetterList, updateLetter } from "@server/content/api/letter";
 
 interface MailDataProps {
   totalCount: number;
+  totalPage: number;
   nodes: {
     id: number;
     sourceId: number;
@@ -37,13 +38,15 @@ interface ConfigProps {
 
 const MailBoxPage: React.FC = () => {
   // @ts-ignore
-  const [mailData, setMailData] = useState<MailDataProps>();
+  const [mailData, setMailData] = useState<MailDataProps>({
+    totalCount: 0,
+    totalPage: 0,
+    nodes: [],
+  });
+
   // @ts-ignore
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize = 7;
-
-  // @ts-ignore
-  const [totalPage, setTotalPage] = useState<number>(10);
 
   // @ts-ignore
   const [config, setConfig] = useState<ConfigProps>({
@@ -58,20 +61,16 @@ const MailBoxPage: React.FC = () => {
     },
   });
 
-  // useEffect(() => {
-  //   getLetterList(config).then((res) => setMailData(res));
-  // }, [config, currentPage]);
-
-  // const handlePage = (num: number) => {
-  //   setCurrentPage(num);
-  // };
+  useEffect(() => {
+    getLetterList(config).then((res) => setMailData(res));
+  }, [config, currentPage]);
 
   // 편지 상세 뷰 관리 변수
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // @ts-ignore
   const handleOpen = (letterId: number) => {
-    //updateLetter(letterId, { isRead: true });
+    updateLetter(letterId, { isRead: true });
     setIsOpen(true);
   };
 

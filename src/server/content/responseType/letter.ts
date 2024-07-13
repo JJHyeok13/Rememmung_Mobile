@@ -12,6 +12,7 @@ export interface WriteLetterResponse {
 // 편지 목록 조회하기 Response Body
 export interface GetLetterListResponse {
   totalCount: number;
+  totalPage: number;
   nodes: {
     id: number;
     sourceId: number;
