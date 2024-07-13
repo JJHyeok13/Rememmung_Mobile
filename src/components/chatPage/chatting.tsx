@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import PetProfileImage from "@assets/chatPage/little.svg";
 
 interface ChatComponentProps {
@@ -24,13 +24,13 @@ interface ChatComponentProps {
 const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
   const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // 함수 컴포넌트 내부에서 마운트나 업데이트 시 스크롤을 제일 하단으로 이동
-  useEffect(() => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
-    }
-  }, []);
+  // // 함수 컴포넌트 내부에서 마운트나 업데이트 시 스크롤을 제일 하단으로 이동
+  // useEffect(() => {
+  //   if (chatContainerRef.current) {
+  //     chatContainerRef.current.scrollTop =
+  //       chatContainerRef.current.scrollHeight;
+  //   }
+  // }, []);
 
   const renderMessageContent = (chat: any) => {
     if (!chat.attachment) {
