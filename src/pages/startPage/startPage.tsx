@@ -2,6 +2,10 @@ import React from "react";
 import KakaoLoginImage from "@assets/startPage/kakaoButton.svg";
 
 const StartPage: React.FC = () => {
+  const handleKakaoLogin = (kakaoLoginURL: string) => {
+    window.location.href = kakaoLoginURL;
+  };
+
   const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
   const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
 
@@ -19,9 +23,10 @@ const StartPage: React.FC = () => {
           </div>
         </div>
 
-        <a href={kakaoLoginURL}>
-          <img src={KakaoLoginImage} />
-        </a>
+        <img
+          src={KakaoLoginImage}
+          onClick={() => handleKakaoLogin(kakaoLoginURL)}
+        />
       </div>
     </div>
   );
