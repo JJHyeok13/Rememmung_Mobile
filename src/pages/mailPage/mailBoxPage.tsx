@@ -7,8 +7,6 @@ import { getLetterList, updateLetter } from "@server/content/api/letter";
 
 import MailIcon from "@assets/mailBoxPage/mailIcon.svg";
 
-//import { dummyData } from "./dummyData";
-
 interface MailDataProps {
   totalCount: number;
   totalPage: number;
