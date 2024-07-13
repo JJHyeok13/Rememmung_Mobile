@@ -33,7 +33,7 @@ export const updateUploadFile = async (
       `/attachment/complete-upload/${attachmentId}`
     );
 
-    return res.data.result;
+    return res.data;
   } catch (error) {
     console.log("첨부파일 업로드 상태 수정 에러", error);
     throw error;

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import PhotoContainer from "@components/photoPage/photoContainer/photoContainer";
+import ImageModal from "@components/photoPage/imageModal/imageModal";
+
+import { getPetFile } from "@server/content/api/pet_attachment";
 
 import { PhotoDataProps } from "type/photoPage/photoPage";
 
 import PhotoIcon from "@assets/photoPage/photoIcon.svg";
-
-import { dummyData } from "./dummyData";
-import ImageModal from "@components/photoPage/imageModal/imageModal";
 
 interface Attachment {
   id: number;
@@ -24,7 +24,16 @@ interface PhotoNode {
 
 const PhotoPage: React.FC = () => {
   // @ts-ignore
-  const [photoData, setPhotoData] = useState<PhotoDataProps>(dummyData);
+  const [photoData, setPhotoData] = useState<PhotoDataProps>({
+    totalCount: 0,
+    totalPage: 0,
+    nodes: [],
+  });
+
+  // @ts-ignore
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const pageSize = 6;
+
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoNode | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -38,9 +47,9 @@ const PhotoPage: React.FC = () => {
     setSelectedPhoto(null);
   };
 
-  // useEffect(() => {
-  //   getPetFile(currentPage, pageSize).then((res) => setPhotoData(res));
-  // }, [photoData, currentPage]);
+  useEffect(() => {
+    getPetFile(currentPage, pageSize).then((res) => setPhotoData(res));
+  }, [photoData, currentPage]);
 
   return (
     <div className="flex flex-col pb-[100px] pt-[35px]">

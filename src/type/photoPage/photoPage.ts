@@ -1,5 +1,6 @@
 export interface PhotoDataProps {
   totalCount: number;
+  totalPage: number;
   nodes: {
     id: number;
     petId: number;

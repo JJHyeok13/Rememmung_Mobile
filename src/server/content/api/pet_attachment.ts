@@ -12,7 +12,7 @@ export const getPetFile = async (
       `/users/me/pet-attachments?page=${page}&pageSize=${pageSize}`
     );
 
-    return res.data.result;
+    return res.data;
   } catch (error) {
     console.log("펫 첨부파일 조회 에러", error);
     throw error;
