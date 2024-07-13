@@ -49,7 +49,7 @@ const KakaoLoginPage: React.FC = () => {
 
           setIsLoggedIn(true);
           if (res.existed) {
-            navigate(`/main`);
+            navigate(`/chat`);
           } else {
             navigate(`/onboarding`);
           }
