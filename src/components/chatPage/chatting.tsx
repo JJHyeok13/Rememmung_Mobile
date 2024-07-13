@@ -33,11 +33,13 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
   }, []);
 
   const renderMessageContent = (chat: any) => {
+    if (!chat.attachment) {
+      return <div>{chat.content}</div>;
+    }
+
     const { type, url } = chat.attachment;
 
     switch (type) {
-      case null:
-        return <div>{chat.content}</div>;
       case "image":
         return <img src={url} alt="Chat Image" />;
       case "video":
