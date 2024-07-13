@@ -4,6 +4,7 @@ import DeleteModal from "@components/myPage/deleteModal/deleteModal";
 
 import NotSelectedRadio from "@assets/myPage/notSelectedRadio.svg";
 import SelectedRadio from "@assets/myPage/selectedRadio.svg";
+import BackNav from "@layout/backNav/backNav";
 
 const DeleteMemberPage: React.FC = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -23,8 +24,9 @@ const DeleteMemberPage: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col pt-[46px] px-5 pb-[100px] h-[100vh] justify-between">
+      <div className="flex flex-col pt-2 px-[30px] pb-[100px] h-[100vh] justify-between">
         <div>
+          <BackNav title="회원탈퇴" />
           <div className="text-[#E72F2F] font-semibold text-base mb-2">
             탈퇴 전 꼭 확인해주세요!
           </div>
