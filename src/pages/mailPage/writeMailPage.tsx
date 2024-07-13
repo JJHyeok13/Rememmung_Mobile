@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MailNavBar from "@components/writeMailPage/mailNavBar/mailNavBar";
@@ -31,10 +31,6 @@ const WriteMailPage: React.FC = () => {
     writeLetter(letterData);
     navigate("/mailbox");
   };
-
-  useEffect(() => {
-    console.log(letterData);
-  }, [letterData]);
 
   return (
     <div className="flex flex-col pt-[46px] px-5 pb-[100px] h-[100vh] justify-between">
