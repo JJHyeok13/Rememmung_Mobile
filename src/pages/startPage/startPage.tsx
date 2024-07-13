@@ -1,19 +1,7 @@
 import React from "react";
 import KakaoLoginImage from "@assets/startPage/kakaoButton.svg";
 
-// import { useNavigate } from "react-router-dom";
-
 const StartPage: React.FC = () => {
-  // const navigate = useNavigate();
-
-  // const handleNext = () => {
-  //   navigate(`/chat`);
-  // };
-
-  // const handleNNext = () => {
-  //   navigate(`/onboard1`);
-  // };
-
   const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
   const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getKakaoToken, kakaoLogin } from "@server/user/api/oauth";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./styles";
+import { getKakaoToken, kakaoLogin } from "@server/user/api/oauth";
 
-import { HashLoader } from "react-spinners";
 import { useRecoilState } from "recoil";
 import { loggedInState } from "recoil/recoil";
+
+import { HashLoader } from "react-spinners";
 
 const KakaoLoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -64,9 +64,9 @@ const KakaoLoginPage: React.FC = () => {
   }, [kakaoToken, navigate]);
 
   return (
-    <styles.Container>
+    <div className="flex items-center justify-center w-screen h-screen">
       <HashLoader size="120px" color="#0075ff" loading={loading} />
-    </styles.Container>
+    </div>
   );
 };
 
