@@ -1,7 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 
 import ChatComponent from "@components/chatPage/chatting";
 import ChattingInput from "@components/chatPage/chattingInput";
+
+import { getChatting, sendChat } from "@server/content/api/chats";
 
 import Background from "@assets/chatPage/back.svg";
 import Profile from "@assets/chatPage/profile.svg";
@@ -9,18 +11,39 @@ import Profile from "@assets/chatPage/profile.svg";
 import ChatIcon from "@assets/chatPage/chatIcon.svg";
 
 import { ChattingDataProps } from "type/chattingPage/chattingPage";
-import { dummyData } from "./dummyData";
 
 const ChatPage: React.FC = () => {
+  const [chattingData, setChattingData] = useState<ChattingDataProps>();
+
   // @ts-ignore
-  const [chattingData, setChattingData] =
-    useState<ChattingDataProps>(dummyData);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const pageSize = 9999;
+
+  // @ts-ignore
+  const [config, setConfig] = useState<ConfigProps>({
+    params: {
+      page: currentPage,
+      pageSize: pageSize,
+    },
+  });
+
+  useEffect(() => {
+    getChatting(config).then((res) => setChattingData(res));
+  }, []);
 
   // 채팅 입력용 state 변수
   const [content, setContent] = useState<string>("");
 
   const handleContent = (e: ChangeEvent<HTMLInputElement>) => {
     setContent(e.target.value);
+  };
+
+  const sendContent = () => {
+    const data = {
+      content: content,
+    };
+    sendChat(data);
+    setContent("");
   };
 
   return (
@@ -47,7 +70,11 @@ const ChatPage: React.FC = () => {
         )}
       </div>
 
-      <ChattingInput content={content} handleContent={handleContent} />
+      <ChattingInput
+        content={content}
+        handleContent={handleContent}
+        sendContent={sendContent}
+      />
     </div>
   );
 };

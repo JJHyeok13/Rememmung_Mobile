@@ -1,5 +1,6 @@
 export interface ChattingDataProps {
   totalCount: number;
+  totalPage: number;
   nodes: {
     id: number;
     chatRoomId: number;

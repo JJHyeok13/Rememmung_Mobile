@@ -5,11 +5,13 @@ import SendButtonImage from "@assets/chatPage/sendButton.svg";
 interface ChattingInputProps {
   content: string;
   handleContent: (e: ChangeEvent<HTMLInputElement>) => void;
+  sendContent: () => void;
 }
 
 const ChattingInput: React.FC<ChattingInputProps> = ({
   content,
   handleContent,
+  sendContent,
 }) => {
   return (
     <div className="flex items-center justify-center">
@@ -20,7 +22,12 @@ const ChattingInput: React.FC<ChattingInputProps> = ({
         onChange={handleContent}
         className="w-[290px] px-4 py-3 text-sm font-medium text-black-700 bg-[#F1F1F1] rounded-lg mr-1"
       />
-      <img src={SendButtonImage} alt="전송 버튼" className="p-2" />
+      <img
+        src={SendButtonImage}
+        alt="전송 버튼"
+        className="p-2"
+        onClick={sendContent}
+      />
     </div>
   );
 };
