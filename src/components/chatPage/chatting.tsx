@@ -36,7 +36,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
     const { type, url } = chat.attachment;
 
     switch (type) {
-      case "text":
+      case null:
         return <div>{chat.content}</div>;
       case "image":
         return <img src={url} alt="Chat Image" />;
@@ -54,7 +54,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ chattingData }) => {
 
   return (
     <div className="flex flex-col w-full" ref={chatContainerRef}>
-      {chattingData.nodes.map((chat) => (
+      {chattingData.nodes.reverse().map((chat) => (
         <div
           key={chat.id}
           className={`flex flex-col my-5 ${
