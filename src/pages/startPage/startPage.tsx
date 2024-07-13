@@ -1,23 +1,23 @@
 import React from "react";
 import KakaoLoginImage from "@assets/startPage/kakaoButton.svg";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const StartPage: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleNext = () => {
-    navigate(`/chat`);
-  };
+  // const handleNext = () => {
+  //   navigate(`/chat`);
+  // };
 
-  const handleNNext = () => {
-    navigate(`/onboard1`);
-  };
+  // const handleNNext = () => {
+  //   navigate(`/onboard1`);
+  // };
 
-  // const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
-  // const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
+  const kakao_client_id = import.meta.env.VITE_KAKAO_REST_API_KEY;
+  const kakao_redirect_uri = import.meta.env.VITE_KAKAO_REDIRECT_URI;
 
-  // const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
+  const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
 
   return (
     <div className="flex flex-col h-screen bg-startPage">
@@ -31,12 +31,9 @@ const StartPage: React.FC = () => {
           </div>
         </div>
 
-        <div>
-          {/* <a href={kakaoLoginURL}> */}
-          <img src={KakaoLoginImage} onClick={handleNext} />
-          <img src={KakaoLoginImage} onClick={handleNNext} />
-          {/* </a> */}
-        </div>
+        <a href={kakaoLoginURL}>
+          <img src={KakaoLoginImage} />
+        </a>
       </div>
     </div>
   );
