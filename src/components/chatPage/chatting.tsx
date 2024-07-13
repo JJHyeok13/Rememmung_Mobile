@@ -4,6 +4,7 @@ import PetProfileImage from "@assets/chatPage/little.svg";
 interface ChatComponentProps {
   chattingData: {
     totalCount: number;
+    totalPage: number;
     nodes: {
       id: number;
       chatRoomId: number;

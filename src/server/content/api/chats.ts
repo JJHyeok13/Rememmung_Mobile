@@ -20,7 +20,7 @@ export const sendChat = async (
       data
     );
 
-    return res.data.result;
+    return res.data;
   } catch (error) {
     console.log("채팅 전송 에러", error);
     throw error;
@@ -38,7 +38,7 @@ export const getChatting = async (
       config
     );
 
-    return res.data.result;
+    return res.data;
   } catch (error) {
     console.log("채팅 내용 조회 에러", error);
     throw error;
