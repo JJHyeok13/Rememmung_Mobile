@@ -51,7 +51,7 @@ const KakaoLoginPage: React.FC = () => {
           if (res.existed) {
             navigate(`/chat`);
           } else {
-            navigate(`/onboarding`);
+            navigate(`/onboard1`);
           }
           setLoading(false);
         }

@@ -12,7 +12,7 @@ const MyPage: React.FC = () => {
         </div>
 
         <div className="p-4 border-[1px] border-[#F1F2F4] rounded-xl">
-          <Link
+          {/* <Link
             to="/mymail"
             className="flex justify-between pb-3 border-b-[1px] border-[#F1F2F4]"
           >
@@ -20,11 +20,11 @@ const MyPage: React.FC = () => {
               내가 쓴 편지
             </div>
             <img src={RightArrow} />
-          </Link>
+          </Link> */}
 
           <Link
             to="/update"
-            className="flex justify-between py-3 border-b-[1px] border-[#F1F2F4]"
+            className="flex justify-between pb-3 border-b-[1px] border-[#F1F2F4]"
           >
             <div className="text-[#51555c] font-medium text-sm">
               반려동물 정보수정

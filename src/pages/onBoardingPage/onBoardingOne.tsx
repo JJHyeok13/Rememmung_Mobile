@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CustomCheckBox from "@components/onBoardingPage/onBoardingOne/customCheckBox";
@@ -8,13 +8,25 @@ import WhiteDogIcon from "@assets/onBoardingPage/whiteDogIcon.svg";
 
 import GrayCatIcon from "@assets/onBoardingPage/grayCatIcon.svg";
 import WhiteCatIcon from "@assets/onBoardingPage/whiteCatIcon.svg";
+import { useRecoilState } from "recoil";
+import { PetInfo } from "@recoil/recoil";
 
 const OnboardingOnePage: React.FC = () => {
+  const [petInfo, setPetInfo] = useRecoilState(PetInfo);
+
+  const handleSetPetInfoSpecies = (type: string) => {
+    setPetInfo((prev) => ({ ...prev, species: type }));
+  };
+
   const navigate = useNavigate();
 
   const handleNext = () => {
     navigate("/onboard2");
   };
+
+  useEffect(() => {
+    console.log(petInfo);
+  }, [petInfo]);
 
   const petItem = [
     {
@@ -39,14 +51,17 @@ const OnboardingOnePage: React.FC = () => {
         <div className="pl-2 mb-8 text-lg font-semibold text-[#51555C]">
           반려동물의 <br /> 종을 선택해주세요!
         </div>
-        <CustomCheckBox items={petItem} />
+        <CustomCheckBox
+          items={petItem}
+          handleSetPetInfoSpecies={handleSetPetInfoSpecies}
+        />
       </div>
 
       <div
         className={`${
-          true ? "bg-brown-500" : "bg-black-300"
-        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px]`}
-        onClick={handleNext}
+          petInfo.species ? "bg-brown-500" : "bg-black-300"
+        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px] cursor-pointer`}
+        onClick={petInfo.species ? handleNext : undefined}
       >
         다음
       </div>

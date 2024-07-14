@@ -12,7 +12,7 @@ const StartPage: React.FC = () => {
   const kakaoLoginURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${kakao_client_id}&redirect_uri=${kakao_redirect_uri}`;
 
   return (
-    <div className="flex flex-col h-screen bg-startPage">
+    <div className="flex flex-col h-screen sm:bg-smStartPage md:bg-mdStartPage xl:bg-xlStartPage xxl:bg-xxlStartPage">
       <div className="flex flex-col items-center justify-center h-screen bg-dimmed">
         <div className="flex flex-col text-center pb-[100px]">
           <div className="text-2xl font-bold text-white">
@@ -26,6 +26,7 @@ const StartPage: React.FC = () => {
         <img
           src={KakaoLoginImage}
           onClick={() => handleKakaoLogin(kakaoLoginURL)}
+          className="cursor-pointer"
         />
       </div>
     </div>

@@ -52,7 +52,7 @@ const ChatPage: React.FC = () => {
         chattingData === null && "h-calc-100vh-100px"
       } "flex flex-col pb-[100px] justify-between"`}
     >
-      <div className="bg-[#C4AE99] w-full h-[238px] rounded-b-[40px] relative flex items-center justify-center">
+      <div className="bg-[#C4AE99] w-full h-[200px] rounded-b-[40px] relative flex items-center justify-center">
         <img src={Background} className="absolute" />
         <img src={Profile} />
       </div>

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
 import MailList from "@components/mailBoxPage/mailList";
-import Pagination from "@components/common/pagination/pagination";
 
 import styles from "./styles";
 
 import { updateLetter } from "@server/content/api/letter";
 
+import MailIcon from "@assets/mailBoxPage/mailIcon.svg";
+
 interface MailDataProps {
   totalCount: number;
+  totalPage: number;
   nodes: {
     id: number;
     sourceId: number;
@@ -22,31 +24,19 @@ interface MailDataProps {
 }
 
 const MyMailPage: React.FC = () => {
-  const [isDeleteMode, setIsDeleteMode] = useState<boolean>(false);
-
   // @ts-ignore
   const [mailData, setMailData] = useState<MailDataProps>({
     totalCount: 0,
+    totalPage: 0,
     nodes: [],
   });
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  const pageSize = 7;
 
   // @ts-ignore
-  const [totalPage, setTotalPage] = useState<number>(
-    Math.ceil(mailData.totalCount / pageSize)
-  );
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const pageSize = 7;
 
   const handlePage = (num: number) => {
     setCurrentPage(num);
-  };
-
-  const OnDeleteMode = () => {
-    setIsDeleteMode(true);
-  };
-
-  const OffDeleteMode = () => {
-    setIsDeleteMode(false);
   };
 
   // 편지 상세 뷰 관리 변수
@@ -62,8 +52,8 @@ const MyMailPage: React.FC = () => {
   };
 
   return (
-    <styles.Container>
-      <styles.ElementBox>
+    <div className="flex flex-col pt-[46px] px-5 pb-[42px] h-screen">
+      <div>
         {mailData && mailData.nodes.length > 0 ? (
           <>
             <MailList
@@ -72,33 +62,18 @@ const MyMailPage: React.FC = () => {
               handleOpen={handleOpen}
               handleClose={handleClose}
             />
-            <Pagination
-              currentPage={currentPage}
-              handlePage={handlePage}
-              totalPage={totalPage}
-            />
           </>
         ) : (
-          <styles.NoData>데이터가 존재하지 않습니다.</styles.NoData>
+          <div className="flex flex-col items-center justify-center">
+            <img src={MailIcon} className="w-16 mb-3" />
+            <div className="text-sm font-medium text-black-300">
+              아직 사진첩이 비어있어요, <br /> 채팅, 편지쓰기를 통해서 사진을
+              얻어봐요!
+            </div>
+          </div>
         )}
-      </styles.ElementBox>
-      <styles.LowerContainer>
-        <styles.ButtonContainer>
-          {!isDeleteMode ? (
-            <styles.DeleteButton onClick={OnDeleteMode}>
-              삭제
-            </styles.DeleteButton>
-          ) : (
-            <>
-              <styles.WriteButton onClick={OffDeleteMode}>
-                취소
-              </styles.WriteButton>
-              <styles.DeleteButton>삭제</styles.DeleteButton>
-            </>
-          )}
-        </styles.ButtonContainer>
-      </styles.LowerContainer>
-    </styles.Container>
+      </div>
+    </div>
   );
 };
 

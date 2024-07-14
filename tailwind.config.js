@@ -3,8 +3,18 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        sm: { min: "1280px", max: "1439px" },
+        md: { min: "1440px", max: "1679px" },
+        xl: { min: "1680px", max: "1919px" },
+        xxl: { min: "1920px", max: "2560px" },
+      },
       backgroundImage: {
-        startPage: "url('./assets/startPage/background.svg')",
+        smStartPage: "url('./assets/startPage/background_400*720.png')",
+        mdStartPage: "url('./assets/startPage/background_400*900.png')",
+        xlStartPage: "url('./assets/startPage/background_400*1050.png')",
+        xxlStartPage: "url('./assets/startPage/background_400*1080.png')",
+
         modal: "rgba(0, 0, 0, 0.8)",
         dimmed:
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 46.5%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 64.76%)",

@@ -63,10 +63,10 @@ const PhotoPage: React.FC = () => {
             onPhotoClick={handlePhotoClick}
           />
         ) : (
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center">
             <img src={PhotoIcon} className="w-16 mb-3" />
             <div className="text-sm font-medium text-black-300">
-              아직 사진첩이 비어있어요, <br /> 채팅, 편지쓰기를 통해서 사진을
+              아직 사진첩이 비어있어요 <br /> 채팅, 편지쓰기를 통해서 사진을
               얻어봐요!
             </div>
           </div>

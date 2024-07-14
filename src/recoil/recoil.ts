@@ -26,3 +26,30 @@ export const basicPetImage = atom<string>({
   default: "",
   effects_UNSTABLE: [persistAtom],
 });
+
+interface PetInfoProps {
+  species: string;
+  name: string;
+  personality: string[];
+  gender: string;
+  birthday: string;
+  farewellday: string;
+  favorites: string[];
+  dislike: string[];
+  skill: string[];
+}
+
+export const PetInfo = atom<PetInfoProps>({
+  key: "PetInfo",
+  default: {
+    species: "",
+    name: "",
+    personality: [],
+    gender: "",
+    birthday: "",
+    farewellday: "",
+    favorites: [],
+    dislike: [],
+    skill: [],
+  },
+});

@@ -8,16 +8,26 @@ interface ItemProps {
 
 interface CustomCheckBoxProps {
   items: ItemProps[];
+  handleSetPetInfoPersonality: (type: string[]) => void;
 }
 
-const CustomCheckBox: React.FC<CustomCheckBoxProps> = ({ items }) => {
+const CustomCheckBox: React.FC<CustomCheckBoxProps> = ({
+  items,
+  handleSetPetInfoPersonality,
+}) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const handleInputChange = (item: ItemProps) => {
     if (selectedItems.includes(item.value)) {
-      setSelectedItems(selectedItems.filter((value) => value !== item.value));
+      const updatedItems = selectedItems.filter(
+        (value) => value !== item.value
+      );
+      setSelectedItems(updatedItems);
+      handleSetPetInfoPersonality(updatedItems);
     } else {
-      setSelectedItems([...selectedItems, item.value]);
+      const updatedItems = [...selectedItems, item.value];
+      setSelectedItems(updatedItems);
+      handleSetPetInfoPersonality(updatedItems);
     }
   };
 

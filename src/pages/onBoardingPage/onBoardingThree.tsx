@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CustomCheckBox from "@components/onBoardingPage/onBoardingThree/customCheckBox";
+import { PetInfo } from "@recoil/recoil";
+import { useRecoilState } from "recoil";
 
 const OnboardingThreePage: React.FC = () => {
+  const [petInfo, setPetInfo] = useRecoilState(PetInfo);
+
+  const handleSetPetInfoPersonality = (type: string[]) => {
+    setPetInfo((prev) => ({ ...prev, personality: type }));
+  };
+
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -23,20 +31,27 @@ const OnboardingThreePage: React.FC = () => {
     { id: 10, value: "swimmer", name: "☺️ 수영하는걸 좋아해요" },
   ];
 
+  useEffect(() => {
+    console.log(petInfo);
+  }, [petInfo]);
+
   return (
     <div className="flex flex-col px-5 pt-14 pb-[42px] h-screen justify-between">
       <div>
         <div className="pl-2 mb-8 text-lg font-semibold text-[#51555C]">
           반려동물의 <br /> 성격을 선택해주세요!
         </div>
-        <CustomCheckBox items={characterItem} />
+        <CustomCheckBox
+          items={characterItem}
+          handleSetPetInfoPersonality={handleSetPetInfoPersonality}
+        />
       </div>
 
       <div
         className={`${
-          true ? "bg-brown-500" : "bg-black-300"
-        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px]`}
-        onClick={handleNext}
+          petInfo.personality.length > 0 ? "bg-brown-500" : "bg-black-300"
+        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px] cursor-pointer`}
+        onClick={petInfo.species ? handleNext : undefined}
       >
         다음
       </div>

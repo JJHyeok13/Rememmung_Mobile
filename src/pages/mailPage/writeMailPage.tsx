@@ -14,6 +14,12 @@ interface LetterDataProps {
 const WriteMailPage: React.FC = () => {
   const navigate = useNavigate();
 
+  const [letterStyle, setLetterStyle] = useState<string>("");
+
+  const handleLetterStyle = (type: string) => {
+    setLetterStyle(type);
+  };
+
   const [letterData, setLetterData] = useState<LetterDataProps>({
     title: "",
     content: "",
@@ -49,7 +55,10 @@ const WriteMailPage: React.FC = () => {
           value={letterData.content}
           onChange={handleContent}
         />
-        <SelectLetterStyle />
+        <SelectLetterStyle
+          letterStyle={letterStyle}
+          handleLetterStyle={handleLetterStyle}
+        />
       </div>
       <div
         className="px-8 py-3 text-center text-white bg-brown-500 rounded-xl"

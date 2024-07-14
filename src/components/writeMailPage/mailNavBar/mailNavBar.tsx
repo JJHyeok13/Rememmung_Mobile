@@ -42,7 +42,7 @@ const MailNavBar: React.FC = () => {
               isActive(item.path)
                 ? "border-brown-500 text-brown-500 font-semibold bg-brown-200"
                 : "border-black-100 text-[#ACADB4] font-medium bg-white"
-            } border-[1px] text-sm px-[14px] py-2 rounded-[35px] mr-2`}
+            } border-[1px] text-sm px-[14px] py-2 rounded-[35px] mr-2 cursor-pointer`}
             key={item.id}
             onClick={() => handleNavigate(item.path)}
           >

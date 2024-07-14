@@ -9,7 +9,7 @@ const LoadingPage: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/chat");
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [navigate]);

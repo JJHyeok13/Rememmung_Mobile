@@ -38,7 +38,7 @@ const OnboardingFourPage: React.FC = () => {
       <div
         className={`${
           true ? "bg-brown-500" : "bg-black-300"
-        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px]`}
+        } w-full px-8 py-3 text-center text-white rounded-xl mt-[23px] cursor-pointer`}
         onClick={handleNext}
       >
         다음

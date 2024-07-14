@@ -32,7 +32,7 @@ import DiaryPage from "@pages/diaryPage/diaryPage";
 import WriteDiaryPage from "@pages/diaryPage/writeDiaryPage";
 
 import MyPage from "@pages/myPage/myPage";
-import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
+// import MyMailPage from "@pages/myPage/myMailPage/myMailPage";
 import UpdatePage from "@pages/myPage/updatePage/updatePage";
 import DeleteDataPage from "@pages/myPage/deleteDataPage";
 import DeleteMemberPage from "@pages/myPage/deleteMemberPage";
@@ -70,7 +70,7 @@ function App() {
 
           {/* 마이 페이지 */}
           <Route path="/mypage" element={<MyPage />} />
-          <Route path="/mymail" element={<MyMailPage />} />
+          {/* <Route path="/mymail" element={<MyMailPage />} /> */}
           <Route path="/update" element={<UpdatePage />} />
           <Route path="/deletedata" element={<DeleteDataPage />} />
           <Route path="/delete" element={<DeleteMemberPage />} />
