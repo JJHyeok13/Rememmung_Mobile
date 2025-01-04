@@ -29,8 +29,8 @@
       "@layout/*": ["layout/*"],
       "@pages/*": ["pages/*"],
       "@recoil/*": ["recoil/*"],
-      "@server/*": ["server/*"]
-      //"@utils/*": ["utils/*"]
+      "@server/*": ["server/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src", "custom.d.ts"],
